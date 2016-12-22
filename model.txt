@@ -1,0 +1,480 @@
+Please note that the data model of the RPHA database has been conveived a few decades ago and as such it still reflects certain technological constraints that are no longer relevant. Here I will give a detailed (but not exhaustive) description of this model.
+There are two main types of records: poems and witnesses. (There are actually more than that. Some additional information about poems could only be stored in separate records. See more at fields V91 and V161.)
+A poetical record contains information about the work itself, links to other works and references to known sources. The database does not store the full texts of the works. (There have been proposals to add links to these records pointing to the digitized contents of the works. This project has been strugling to progress as planned due to technical and other impediments. There exists a few working examples.)
+Witness tpye records give a short description of the source and a list of known works within that source, which are also present in the database. 
+All the fields are noted with the letter 'V' and a following number.
+The system of genres within the database is a complex tree sturcture, with each node corresponding to a 3 digit code. A verse can be associated with any number of genres anywhere in the hierarchy. I have given a list of the genres and their relations under the 'GENRE' title with translations and alternative translations into English. (Please note that this translation is still a work in progress and has not been revised by a native speaker.)
+Every field that contains names' of persons have the same structure. Every name is described with 3 sets of fields: surname, forename and any additional information about the person. (For example if the uncertainty of the name can be expressed here or if only the monogram is known.) Fields that contain names are: V5, V15 and V31.
+The fields describing the information within the colophon (V32) and acrostic (V35) also share the same structure
+Fields with multiple predefined values have corresponding keys (letters or numbers) paired to their values. In these cases only the keys are present in the data set.
+To my understanding the current online version consists of an XML file containing all the data and a JAVA application to govern that data.Since the data set is stored in an XML file there are no distinc datatypes for arrays, dates etc. Also for the sake of conserving space lists are represented in one string where every element is delimited by a '%' character. If needed an export of the data is available in an XML file here: https://github.com/simonzsolt/rpha_XML/blob/master/export.2016.04.05.19.10.xml
+I am currently working on porting the existing database to a more current (Javascript, NoSQL) platform. As soon as I have it, I will update you on the redesigned model.
+
+----------------
+POETICAL RECORDS
+----------------
+
+[FIELD : DESCRIPTION]
+
+V1 : The four letter unique ID of the record. Also known as 'RPHA' or 'R' number which is used to refer to a verse.
+
+V2 : The incipit of the verse.
+
+V3 : The title of the verse.
+
+V5 : The author or authors. 
+
+V11 : Information about any link to a certain poetical tradition. Four cases are recognised and marked by numbers from 1 to 4. The cases are as follows:
+
+	1 : The verse is written in a foreign laguage. No influence can be discovered, perhaps there weren't any. 
+
+	2 : Influence can be discovered. 
+
+	3 : Influence can be discovered, but we can not identify it.
+	
+	4 : No influence can be discovered.
+
+V12 : The incipit(s) of the verse(s) that influenced the verse at hand. 
+
+V13 : The title(s) of the verse(s) that influenced the verse at hand.
+
+V14 : ID(s) of the Analecta Hymnica if the verse is a translation of a hymn.
+
+V15 : Author(s) of the influental work. Same as author (V5). 
+
+V18 : The original language if the verse at hand is a translataion. Five options are available:
+
+	all : German.
+	
+	gre : Greek.
+	
+	cro : Croatian.
+	
+	hon : Hungarian.
+	
+	lat : Latin.
+
+V21 : Date (year). 
+
+V22 : Because dates can seldom be given accurately here the exact quality of the date field (V21) is given in detail. Seven distinctions are made:
+
+	1 : The given year is precise.
+	
+	2 : Not later than the given year.
+	
+	3 : Not earlier than the given year.
+	
+	4 : Approximately at the given year.
+	
+	5 : Approximately before the given year.
+	
+	6 : Between the two given dates. Separated by '-'.
+	
+	7 : One of several given dates are precise. Separated by '%'.
+
+V23 : Describes whether the verse is sung or not. Three options are possible:  
+
+	1 : Not sung.
+	
+	2 : Sung.
+	
+	3 : Uncertain.
+
+V24 : Signature. Six possibilities are recognised.
+
+	1 : The author has signed the verse.
+	
+	2 : The author is unknown.
+	
+	3 : The verse has been attributed to the author after its composition.
+	
+	4 : The verse is attributed to the author by modern research.
+	
+	5 : The verse itself is not signed, but the collection in which it was published bears the signature of the author. 
+	
+	6 : An anagram of the authors name is present above the verse. 
+
+V28 : The 3 letter code(s) of genre(s). See the genre structure and their translations below.
+
+V30 : State of the colophon of the verse.
+
+	1 : The verse has a colophon.
+
+	2 : The verse does not have a colophon.
+
+	3 : It is unknown wheter the verse has a colophon or not.
+
+V31 : Name of the dedicatee. 
+
+V32 : Information from the colophon.
+
+	s1 : Information about the authors person (usually name or other identification) 
+
+	sd : Information about the dating of the verse.
+
+	sl : Information about the place of verse's creation. 
+
+V33 : State of the acrostic.
+
+	1 : The verse has an acrostic.
+	
+	2 : The verse does not have an acrostic.
+	
+	3 : It is unknown whether the verse has an acrostic or not.
+
+V34 : Acrostic.
+
+V35 : Information in the acrostic. Same structure as the colophon (V32).
+
+V39 : Comments.
+
+V41 : Integritiy of the text.
+
+	1 : Complete. The length of the verse is given precisely.
+	
+	2 : Fragment. The length of the fragment is given.
+
+	3 : Fragment. The complete verse is known, therefore the length of the verse is given precisely  
+
+	4 : It can not be decided whether the verse is complete. The length give is uncertain. 
+
+V42 : Length of the verse. Only the number is given here, the unit is provided in field V43.
+
+V43 : Units of length.
+
+	1 : Strofes.
+
+	2 : Verses.
+
+	3 : Paragraphs.
+
+V44 : Metrical typology.
+
+	1 : Syllabic, isostrophic.
+	
+	3 : Uncertain whether verse or prose.
+	
+	4 : Uncertain Graeco-Roman quantitative metre.
+		
+	5 : Uncertain versification, syllabic, isostrophic verse.
+	
+	6 : Hexameter.
+	
+	7 : Distich.
+	
+	8 : Graeco-Roman quantitative metre, but neither hexameter nor distich.
+	
+	10 : Tonic, non-strophic, non-syllabic, non-rhyming.
+	
+	11 : Uncertain whether verse or rhytmical prose.
+	
+	12 : Alternation of verse and prose.
+	
+	15 : Alternating metre.
+
+	16 : Showing syllabic tendencies, although not syllabic verse. A special metre used by Gábor Pesti. 
+	
+	17 : Syllabic.
+	
+	18 : Word counting.
+	
+	19 : Imitating a sequence.
+	
+	30 : Melody reference. (The metre is deduced from a nother verse's metre.)
+
+V45 : Metrical scheme. 
+
+V46 : Rhyme scheme.
+
+V47 : Number of syllables in a verse based on the metrical scheme.
+
+V48 : Denomination of the source of the verse.
+
+	k : Catholic.
+	
+	p : Protestant.
+	
+	r : Reformed.
+	
+	e : Evangelical.
+	
+	s : Sabbatarians.
+	
+	u : Unitarian.
+	
+	m : Muslim.
+	
+	v : Secular.
+	
+	x : Undefined.
+
+V51 : The printed sources of the verse from before 1701. The code consists of two digits denoting the source, the followed by a ':' the location within the source.
+
+	27 : RMKT (Régi Magyar Költők Tára [Collection of Old Hungarian Poets])
+	
+	28 : RMNY (Régi Magyarországi Nyomtatványok [Old Hungarian Printed Works])
+	
+	29 : HH list
+
+V52 : The written sources of the verse from before 1701. 
+
+	18 : MKÉVB (Magyar Kéziratos Énekeskönyvek és Versgyűjtemények Bibliográfiája [Bibliography of Hungarian Written Songbooks and Collections of Poems])
+
+	19 : H list (if not found in MKÉVB)
+
+V53 : Edition(s) of the verse's melody.
+
+V54 : Modern edition(s) of the verse.
+
+V55 : Facsimile edition(s).
+
+V61 : The IDs of verses that the verse at hand refers to as having the same melody in one of the sources.
+
+V65 : The IDs of verses that refer to the verse at hand as having the same melody.
+
+V91 : Type of datasheet.
+
+	0 : Main datasheet for verses. 
+
+	6 : An extension to a main datasheet. Its ID is the same as the main record's ID it is related to with an added letter at the end.
+	
+	8 : Datasheet of foreign or post 17th century verses.
+	
+	9 : Main datasheet for sources.
+
+V161 : IDs of verses based on a whole-part relationship. 
+
+V162 : IDs of verses which share the same source.
+
+V163 : Refrain scheme based on the metrica scheme.
+
+	+ : No refrain is present in the verse. 
+
+	R0 : A verse with a refrain.
+
+	R1 : Systematically alternating rhyming refrain. 
+
+	R2 : Occasionally assigned refrain.
+
+	R3 : Unsystematically alternating rhyming refrain. 
+
+	R4 : A metre can not be identified, although the verse could have had a refrain.
+
+	I0 : Repeated verse.
+
+V164 : Echo.
+
+	1 : The verse has echoed rhymes that appear at the end of verses.
+
+	2 : The verse has echoed rhymes that appear at the end of the verse.
+
+V165 : Internal referencing. IDs are given so one record can be connected with others. This field is used to connect different types of records e.g. main and extension datasheets.
+
+---------------
+SOURCES RECORDS
+---------------
+
+V101 : Type of the document.
+
+	MKÉVB0 : Magyar Kéziratos Énekeskönyvek és Versgyűjtemények Bibliográfiájá [Bibliography of Hungarian Written Songbooks and Collections of Poems]. Written sources before 1565.
+	
+	MKÉVB1 : Magyar Kéziratos Énekeskönyvek és Versgyűjtemények Bibliográfiájá [Bibliography of Hungarian Written Songbooks and Collections of Poems]
+	
+	RMNY : Régi Magyarországi Nyomtatványok [Old Hungarian Printed Works]
+	
+	RMK1 : Régi magyar könyvtár I. [Old Hungarian Library I.] 
+	
+	RMG : Printed works that can not be found in the bibliographys above.
+
+V111 : ID within the chosen bibliography.
+
+V112 : The author of the document.
+
+V113 : The name of the documents translator.
+
+V121 : The new title of the document. 
+
+V122 : Original title of the document.
+
+V131 : Place of printing.
+
+V132 : Date of the document.
+
+V133 : Name of the printer.  
+
+V141 : Genre of the document.
+
+V142 : Denomination of the document.
+
+V151 : Location of the document.
+
+V152 : Name of the library keeping the document.
+
+V153 : Collection containing the document.
+
+V154 : Shelfmark of the documents volume.
+
+V155 : Name of the volume.
+
+V156 : Shelfmark of the document.
+
+V160 : Comments.
+
+------
+GENRES
+------
+
+1.3.1. A vallásos ág (religious branch) 
+[001] vallásos (religious) (ecclesiastical poetry)
+  |
+  +---[002] história (story) (presented as a story)
+  |     |
+  |     +---[004] elbeszélő (narrative)
+  |     |     |
+  |     |     +---[009] bibliai (biblical)
+  |     |     +---[134] világkrónika (world chronicle) (a chronicle of the world) 
+  |     |     +---[300] egyháztörténeti kivonat (extracts of church history) (ecclesiastical history)
+  |     |           |
+  |     |           +---[301] közel kortársi (near contemporary) (relatively recent)
+  |     |           +---[302] régi (old)
+  |     |
+  |     +---[005] leíró v. értekező (treatise) (descpitive or deliberative)
+  |           |
+  |           +---[010] prédikációs ének (preaching songs) 
+  |
+  +---[003] nem história (non-stories, not a story) (not presented as a story)
+        |
+        +---[006] bibliai (biblical)
+        |     |
+        |     +---[013] zsoltár (psalm)
+        |     +---[014] jeremiád (jeremiad)
+        |     +---[015] rövid foglalat (short summary)
+        |     +---[201] dráma (drama) (dramatic)
+        |     +---[258] Énekek éneke (Song of songs) 
+        |
+        +---[008] liturgikus vagy paraliturgikus eredetű (of liturgical or paraliturgical origin)
+        |     |
+        |     +---[016] himnusz (hymn)
+        |     |     |
+        |     |     +---[124] Szent királyról (insprired a of holy king)
+        |     |
+        |     +---[017] antifona (antiphon)
+        |     +---[018] szekvencia (sequence)
+        |     +---[100] benedicamus (benedicamus)
+        |     +---[102] imádság (prayer)
+        |     +---[104] szerzetesi regula (monastic regulation) (a description of the observances of the monastic life)
+        |     +---[125] legenda (legend)
+        |     +---[126] Mária-siralom (planctus) (a lament of Mary)
+        |     +---[130] Mária-ének (praising Mary)
+        |     +---[200] cantio (canticle)
+        |     +---[255] úrfelmutatási ének (Song of the elevation of the Host)
+        |     +---[256] benedicamus parafrázis (benedicamus paraphrase)
+        |
+        +---[023] dogmatika (dogmatic theology) (dogmatics)
+        |     |
+        |     +---[027] káté-ének (catechizing song, catechization)
+        |           |
+        |           +---[028] Szentháromság-ének (Trinity song) (explaining the Trinity)
+        |           +---[026] úrvacsora-ének (communion song)  (expalining the communion [of the two kinds])
+        |           +---[029] credo magyarázat (explaining the credo)
+        |           +---[030] Miatyánk-ének (explaining the Lord's Prayer) 
+        |           +---[031] Tízparancsolat-ének (explaining the Ten Commandments)
+        |           +---[039] vallástétel (profession) (a public confession)
+        |           +---[107] hitvita (theological dispute)
+        |           +---[202] doxológia (doxology)
+        |
+        +---[024] alkalmi ének (occasional songs) (concerning an event)
+        |     |
+        |     +---[032] házasének (marital, matrimonial)
+        |     +---[033] keresztelési ének (baptismal)
+        |     +---[034] bölcsődal (lullaby)
+        |     +---[035] temetési ének (funerary)
+        |     +---[257] asztali áldás (grace)
+        |     +---[259] útonjárók éneke (pilgrim, traveler song)
+        |
+        +---[025] mindennapi v. ünnepi lelki ének (everyday[common] or festive[celebratory] spiritual song)
+        |     |
+        |     +---[036] dicséret (praise)
+        |     +---[037] hálaadó ének (thanksgiving)
+        |     +---[038] könyörgés (supplication)
+        |     +---[043] hívők biztatása (encouraging of the believers)
+        |     +---[040] Szentlélek invokáció (Invocation of the Holy Ghost, Spirit)
+        |     +---[041] tanulság (moral)
+        |     +---[044] siralom (lament)
+        |     +---[101] halálrakészítő (dance of death) (to prepare the believer for death)
+        |     +---[042] jó keresztényi cselekedetre intő ének (prompting, urging the believer to do good christian deeds)
+        |     +---[045] hívők vigasztalása (comforting, consoling the believers)
+        |     +---[047] a világ hiábavalóságáról (on the vanity of the world)
+        |     +---[260] rabének (prisoner' song)
+        |
+        +---[103] muzulmán (muslim) (a muslim hymn)
+        +---[123] bájoló, varázsige (incantation) 
+        +---[203] embléma (emblematic)
+1.3.2. A világi ág (secular branch)
+[048] világi (secular)
+  |
+  +---[049] história (story) (presented as a story)
+  |     |
+  |     +---[051] elbeszélő (narrative)
+  |     |     |
+  |     |     +---[056] nem fiktív (non-fiction)
+  |     |     |     |
+  |     |     |     +---[068] történelmi (historical) (relating to the events of the distant past)
+  |     |     |     +---[069] kortársi, tudósító (contemporary, of tidings) (relating to the events of the near past)
+  |     |     |
+  |     |     +---[057] fiktív (fiction) (romanesque)
+  |     |
+  |     +---[052] leíró v. értekező (treatise) (descpitive or deliberative)
+  |
+  +---[050] nem história (not presented as a story)
+        |
+        +---[053] morális v. politikai (moral or political)
+        |      |
+        |      +---[058] arisztokratikus regiszter (aristocratic register)
+        |      |     |
+        |      |     +---[086] katonaének (inspired by military life)
+        |      |
+        |      +---[059] populáris v. vágáns regiszter (popular or [vagans, wandering, vagabond] register)
+        |      |     |
+        |      |     +---[074] naptárvers (calendar verse)
+        |      |     +---[087] hegedős ének (of minstrel character)
+        |      |     +---[088] vágáns szatíra ([vagans, wandering, wagabond] satire) (satirical)
+        |      |     +---[089] politikai propaganda (political propaganda)
+        |      |     +---[115] utazási vers (traveling song) (of a refugee or a pilgrim)
+        |      |     +---[127] jogszabály (legal regulations)
+        |      |     +---[128] játék (game)
+        |      |     +---[129] csízió (Cisiojanus)
+        |      |     +---[212] mezőgazdasági költemény (agricultural)
+        |      |
+        |      +---[061] humanista iskolai regiszter (humanist school register) (humanist or scholastic register)
+        |            |
+        |            +---[090] episztola dedicatoria (epistola dedicatoria, recommendation letter)
+        |            +---[091] tanulság, fabula (moral, fabula)
+        |            +---[092] idézet (citation)
+        |            +---[093] epigramma[R], sententia[I] (epigram, sententia, saying)
+        |            +---[095] epicédium (epicedium) (obituary)
+        |            +---[109] embléma (emblematic)
+        |            +---[120] Horatius-paródia (Horatius parody) (a parody of Horace)
+        |
+        +---[054] szerelmes, erotikus (love poetry, erotic)
+              |
+              +---[063] arisztokratikus regiszter – udvari (aristocratic register - courtly)
+              |     |
+              |     +---[076] partimen (partimen)
+              |     +---[077] embléma (emblematic)
+              |     +---[078] szerelmi köszöntés (greeting a lady)
+              |     +---[080] török bejt fordítása (translation of a turkish bejt [beyt])
+              |     +---[081] aenigma (enigmatic)
+              |     +---[118] misszilis levél (letter missive)
+              |     +---[210] epigramma (epigram)
+              |     +---[211] udvari dráma (courtly drama) (dramatique)
+              |
+              +---[064] populáris regiszter (popular register)
+              |     |
+              |     +---[082] női dal (women's song)
+              |     +---[083] latrikánus vers (latrican verse) (satirical or bold)
+              |     +---[084] gab (gab, gap)
+              |     +---[119] alba (alba, aubade) 
+              |     +---[121] táncdal (song for dancing) (song of dance)
+              |
+              +---[066] humanista iskolai (humanist school) (humanist or scholastic register)

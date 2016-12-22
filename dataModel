@@ -1,0 +1,184 @@
+-------
+*verse*
+-------
+
+v1 ID
+v2 inc
+v3 title
+v5 auth [ARRAY]
+	1 sur
+	2 fore
+	3 note
+v11 trad
+	1 "A vers esetleges idegen nyelvű, közvetlen irodalmi mintáit nem tudjuk megállapítani, lehet, hogy nem is volt közvetlen irodalmi mintája"
+	2 "A vers meghatározható közvetlen irodalmi mintán alapszik"
+	3 "A vers bizonyosan közvetlen irodalmi mintán alapszik, de a mintát nem tudjuk azonosítani"
+	4 "Nem tudjuk, hogy a versnek volt-e irodalmi mintája"
+v12 incOr [ARRAY]
+v13 titleOr [ARRAY]
+v14 hymnId [ARRAY]
+v15 authEt [ARRAY]
+	1 sur
+	2 fore
+	3 note	
+v18 langOr
+	all "német"
+	gre "görög"
+	cro "horvát"
+	hon "magyar"
+	lat "latin"
+v21 date
+v22 datePrec
+	1 "A v21 rovat egyetlen évszámadata pontos dátum."
+	2 "A v21 rovat egyetlen évszámadatánál nem későbbi a vers."
+	3 "A v21 rovat egyetlen évszámadatánál nem korábbi a vers."
+	4 "A v21 rovat egyetlen évszámadata körüli időben keletkezett a vers."
+	5 "A v21 rovat egyetlen évszámadata környékét megelőző időben keletkezett a vers."
+	6 "A v21 rovat kötőjelekkel (-) elválasztott két évszámadata között keletkezett a vers."
+	7 "A v21 rovat több, százalékjelekkel (%) elválasztott évszámadatának valamelyike pontos dátum."
+v23 song
+	1 "A vers szövegvers"
+	2 "A vers énekvers"
+	3 "Bizonytalan, hogy a verset énekelték-e"
+v24 sign
+	1 "A verset a szerző látta el névmegjelöléssel"
+	2 "A vers szerzőjét nem ismerjük"
+	3 "A verset a keletkezését követően a szerzőnek tulajdonították"
+	4 "A verset a modern kutatás tulajdonítja a szerzőnek"
+	5 "A vers maga nem szignált, de a gyűjtemény, amelyben szerepel, a szerző neve alatt jelent meg"
+	6 "A vers anagrammatikusan szignált, vagyis a szerző neve nem olvasható a vers felett, de nevének anagrammája igen"
+v28 genre [ARRAY]
+v30 colo
+	1 "A versnek van kolofonja"
+	2 "A versnek nincs kolofonja"
+	3 "Nem tudjuk, hogy a versnek van-e kolofonja"
+v31 dedic
+	1 sur
+	2 fore
+	3 note
+v32 coloDet [ARRAY]
+	1 után állnak a szerző személyére vonatkozó adatok (általában név, ennek híján egyéb megjelölés)
+	d után a vers keletkezési idejére vonatkozó adatok
+	l után a vers keletkezésének helyére vonatkozó megjegyzések
+v33 acr
+	1 "A versnek van akrosztichonja"
+	2 "A versnek nincs akrosztichonja"
+	3 "Nem tudjuk, hogy a versnek van-e akrosztichonja"
+v34 acrost
+v35 acroDet [ARRAY]
+	1 után állnak a szerző személyére vonatkozó adatok (általában név, ennek híján egyéb megjelölés)
+	d után a vers keletkezési idejére vonatkozó adatok
+	l után a vers keletkezésének helyére vonatkozó megjegyzések
+v39 note
+v41 int
+	1 "A vers szövege teljes, a terjedelemre vonatkozó adat pontos"
+	2 "A vers töredék, a terjedelemre vonatkozó adat a töredék terjedelmét mutatja"
+	3 "A vers töredék, de ismerjük az egész vers terjedelmét, így a terjedelemre vonatkozó adat pontos"
+	4 "Nem tudjuk eldönteni, hogy a vers teljes-e, a terjedelemre vonatkozó adat bizonytalan"
+v42 length [ARRAY]
+v43 lengthUn
+	1 "A vers terjedelme versszakokban értendő"
+	2 "A vers terjedelme sorokban értendő"
+	3 "A vers terjedelme bekezdésekben értendő"
+v44 metreType
+	1 "Szótagszámláló, izostrofikus vers"
+	3 "Bizonytalan, hogy vers-e, vagy próza"
+	4 "Bizonytalan verselésű időmértékes vers"
+	5 "Bizonytalan verselésű szótagszámláló, izostrofikus vers"
+	6 "Hexameter"
+	7 "Disztichon"
+	8 "Időmértékes vers, de nem hexameter vagy disztichon"
+	10 "Hangsúlyos, nem strofikus, nem szótagszámláló rímtelen vers"
+	11 "Bizonytalan, hogy vers-e, vagy ritmikus próza"
+	12 "Verssorok és próza váltakozása"
+	15 "Váltakozó metrumú"
+	16 "Szótagszámláló tendenciát mutató, de nem szótagszámláló vers. Pesti Gábor által használt, speciális metrum"
+	17 "Szótagszámláló vers"
+	18 "Szószámláló vers"
+	19 "Sequentiát imitáló vers"
+	30 "Nótajelzés"
+v45 metre [ARRAY]
+v46 rhyme
+v47 syll
+v48 denom
+	k "katolikus"
+	p "protestáns"
+	r "református"
+	e "evangélikus"
+	s "szombatos"
+	u "unitárius"
+	m "muzulmán"
+	v "világi"
+	x "közelebbről meg nem határozott"
+v51 rmny [ARRAY]
+v52 mkevb
+v53 melEd [ARRAY]
+v54 edMod [ARRAY]
+v55 facs
+v61 songCon [ARRAY]
+v65 songConVerse [ARRAY]
+v91 recType
+	0 "1601 előtti magyar vers adatait tartalmazó űrlap (főadatlap). R-száma mindig négyjegyű""
+	6 "1601 előtti magyar vers adatait tartalmazó űrlap, amely egy 0-ás típusú másik adatlaphoz tartozó kiegészítés (mellékadatlap). R-száma megegyezik a 0-ás típusú adatlap R-számával, amit egy betűjelölés (a, b, c...) követ. Metrumváltó vagy nótajelzést váltó versek esetén fordul elő. Az űrlap (képernyő-maszk) felépítése teljesen megegyezik az főadatlapokéval, de csak azok a rovatok vannak kitöltve, amelyek speciálisan a vers szóban forgó részére vonatkoznak, a többi mellékadatlap azonos rovatától eltérnek"
+	8 "Nótajelzésként előforduló idegen nyelvű vers vagy 1600 utáni magyar vers űrlapja. Az űrlap (képernyőmaszk) felépítése teljesen megegyezik az alapadatlapokéval, de itt csak az R és INC rovatok kitöltöttek"
+	9 "A versek forrásaiként szolgáló dokumentumok (kéziratok, nyomtatványok) adatait tartalmazó űrlap (Forrás-adatlap). Részletes leírását a következő pontban adjuk"
+v161 refSyn [ARRAY]
+v162 ref
+v163 refrain
+	+ "A sorban nincs refrén"
+	R0 "Refrénes sor"
+	R1 "Szabályosan váltakozó rímes refrén"
+	R2 "Időnként refrénnel ellátott sor"
+	R3 "Szabálytalanul váltakozó refrén"
+	R4 "Metrumot nem tudunk megállapítani, de a vers refrénes szerkezetű lehetett"
+	I0 "Megismételt sor"
+v164 echo 
+	1 "Echós szerkezetű vers, az echós rímek a strófák végén jelennek meg"
+	2 "Echós szerkezetű vers, az echós rím a vers legvégén jelenik meg"
+v165 refInt [ARRAY]
+
+--------
+*source*
+--------
+
+v101 - A dokumentum típusa (TIPUS). A rovat hossza 20 betűhelynyi. A dokumentum leírását tartalmazó bibliográfia rövidítése. A lehetséges jelölések és jelentésük a következő:
+
+"MKÉVB0" - 1565 előtti kéziratos forrás, vagy olyan kézirat, ill. kéziratos bejegyzés, amely nem található meg az MKÉVB1-gyel jelölt bibliográfiában. Ezeknek a forrásoknak a felsorolása megtalálható a repertórium alapján nyomtatott kötetben.
+"MKÉVB1" - Stoll Béla: A magyar kéziratos énekeskönyvek és versgyűjtemények bibliográfiája (1565-1840) című bibliográfiájában szereplő kézirat.
+"RMNY" - A Régi Magyarországi Nyomtatványok 1473-1600 című bibliográfiában szereplő nyomtatvány.
+"RMK1" - Szabó Károly: Régi magyar könyvtár I. című bibliográfiájában szereplő nyomtatvány, amely nem szerepel az RMNY rövidítéssel jelölt kötetben.
+"RMG" - Olyan nyomtatvány, amely nem szerepel sem az RMNY-nyel, sem az RMK1-gyel jelölt bibliográfiákban. Ezek felsorolása szintén megtalálható a repertórium nyomtatott változatában.
+v111 - A dokumentum bibliográfián belüli sorszáma (SORSZÁM). A TIPUS rovatban megjelölt bibliográfiában szereplő tételszám szerepel itt 5 betűhelyen, amiből az első négy helyen kötelezően négyjegyű számnak kell állnia (szükség szerint az elején nullákkal kiegészítve), az ötödik helyen pedig betű vagy számjegy is állhat, ha a bibliográfia tételszáma betűvel vagy számmal van kiegészítve. Tehát (az egyenlőségjelek jobb oldalán a TIPUS és SORSZÁM rovatok adatait szerepelnek kötőjellel elválasztva):
+
+RMNY 353/2 = RMNY-03532 RMK I 256A = RMK1-0256A
+v112 - A dokumentum szerzője (SZERZŐ). Ha a szóban forgó nyomtatvány szerzőjét ismerjük, akkor ebben a rovatban szerepel a neve, nem a főlapon megszokott alrovatos szerkezetben, hanem hagyományos alakban. Ha a kiadvány több művet tartalmaz (például két históriát), és a bibliográfia több szerzőt és címet is közöl, akkor minden esetben az első szerzőt és címet vesszük figyelembe, még akkor is, ha a repertórium ezt a verset nem is tartalmazza, mert a kötet azonosíthatósága a fontos, és a SORSZÁM rovat 5. betűhelyén szereplő jelölés eligazít a kiadvány részei között. A rovat hossza 80 betűhelynyi.
+
+v113 - A dokumentum fordítója (FORDÍTÓ). Amennyiben a kézirat vagy nyomtatvány nem eredeti, hanem fordítás, úgy a mű fordítójának neve szerepel itt, a SZERZŐ rovat névjelölési gyakorlatának megfelelően. A rovat hossza 80 betűhelynyi.
+
+v121 - A dokumentum új címe (CÍM_ÚJ). A kézirat vagy nyomtatvány szakirodalomban használatos elnevezése. Ha a következő, CÍM_ER rovat nincs kitöltve, akkor ez az adat jelenik meg a dokumentum megnevezéseként, címeként. Fejlesztés alatt álló rovat. A kéziratok megnevezése általában ebben a rovatban történik, mivel a kéziratoknak a legtöbbször valóban nincsen kiadványszerű címük, csupán a bennük szereplő egyes műveknek. Az adatbázis jelenlegi állapotában a francia nyelvű kötethez igazodóan ezek a megnevezések franciául szerepelnek, de ezt a jelölésmódot a későbbiekben szeretnénk megváltoztatni, magyar nyelvű jelölést és többnyelvű, segédprogram által generált, választható megjelenítési módot tervezünk. A rovat hossza 200 betűhelynyi.
+
+v122 - A dokumentum eredeti címe (CÍM_ER). A kézirat vagy nyomtatvány eredeti címének betűhív leírásából az első három szó. A tömör bibliográfiai hivatkozások érdekében a cím csonkolt formában jelenik meg, ez a rovat a cím azonosítására szolgál. Fejlesztés alatt álló rovat, a későbbiekben a cím teljes alakját tartalmazza majd, és segédprogrammal oldjuk meg a tömör, háromszavas megjelenítést. Mivel a megjelenítés úgy történik, hogy a CÍM_ER rovat tartalma jelenik meg, ha a rovat ki van töltve, ilyenkor gyakran előfordul, hogy a CÍM_ÚJ rovat a cím teljesebb alakját tartalmazza. Ha a kiadvány több művet tartalmaz (például két históriát), és a bibliográfia több szerzőt és címet is közöl, akkor minden esetben az első szerzőt és címet vesszük figyelembe, még akkor is, ha a repertórium ezt a verset nem is tartalmazza, mert a kötet azonosíthatósága a fontos, és a SORSZÁM rovat 5. betűhelyén szereplő jelölés eligazít a kiadvány részei között. A rovat hossza 200 betűhelynyi.
+
+v131 - A nyomtatvány nyomtatási helye (NYOMDAHELY). Értelemszerűen a kiadvány nyomtatási helyét jelöli, a város nevét magyaros alakban adjuk meg. Több város esetén vesszőkkel választjuk el a helyneveket. A rovat hossza 80 betűhelynyi.
+
+v132 - A dokumentum keletkezési ideje (IDŐPONT). A kézirat vagy nyomtatvány keletkezési idejét mutatja. Ha pontos évszámot tudunk, akkor ez áll itt, egyébként az időadat magyar nyelvű kiegészítéssel szerepel. A szöveges rész szigorúan kötött, mivel a rovat adatait segédprogram fordítja idegen nyelvre (a megjelent kötet esetében franciára). A rovat hossza 80 betűhelynyi.
+
+v133 - A nyomtatványt előállító nyomdász (NYOMDÁSZ). Fejlesztés alatt álló rovat. Esetenként már most is kitöltött. Értelemszerűen a nyomdász neve szerepelhet itt 200 betűhelynyi hosszan.
+
+v141 - A dokumentum műfaja (MŰFAJ). Fejlesztés alatt álló rovat. Esetenként már most is kitöltött. Értelemszerűen a kézirat vagy nyomtatvány egészének műfaját lehet itt feltüntetni, szövegesen, 80 betűhelynyi hosszan.
+
+v142 - A dokumentum felekezeti hovatartozása (FELEKEZET). Ha a kézirat vagy nyomtatvány felekezetileg besorolható, akkor a felekezet magyar megnevezése (katolikus, protestáns, református, evangélikus, szombatos, unitárius, mohamedán, világi) szerepel itt, egyébként kitöltetlen. A versek adatlapjain szereplő RELSE rovat a forrásoknak ezt az adatát tartalmazza összesítve. A rovat hossza 80 betűhelynyi.
+
+v151 - A dokumentum őrzési helye (VÁROS). Ha a forrás kézirat vagy egypéldányos nyomtatvány, akkor itt adjuk meg annak a városnak a nevét eredeti helyesírással, ahol a példányt őrzik. A rovat hossza 80 betűhelynyi.
+
+v152 - A dokumentumot őrző könyvtár neve (KÖNYVTÁR). A kéziratot vagy egypéldányos nyomtatványt őrző könyvtár neve eredeti helyesírással. A város neve után szerepelhet az (olim.) jelzés, mutatva, hogy a szóban forgó dokumentum ma nem lelhető fel a megadott helyen. A rovat hossza 80 betűhelynyi.
+
+v153 - A dokumentumot tartalmazó gyűjtemény (GYŰJTEMÉNY). Ha az előző rovatban megnevezett könyvtáron belül a dokumentum külön gyűjteményben szerepel, akkor ennek a neve szerepel itt eredeti helyesírással. A rovat hossza 80 betűhelynyi.
+
+v154 - A dokumentumot tartalmazó kötet jelzete (KÖTET JELZET). Nyomtatványba bejegyzett kézírásos forrásoknál a nyomtatvány bibliográfiai leírására utaló hivatkozás (Például a Székely István világkrónikájának lapjaira bejegyzett vers esetén: RMNY 156). A rovat hossza 80 betűhelynyi.
+
+v155 - A dokumentumot tartalmazó kötet megnevezése (SZÖVEGES FELOLDÁSA). Az előző rovatban megjelölt nyomtatvány szöveges megnevezése, az adatok sorrendje: szerző, cím, megjelenési hely, megjelenési idő, a kéziratos rész helye a köteten belül. A rovat hossza 200 betűhelynyi.
+
+v156 - A dokumentum raktári jelzete (RAKTÁRI JELZET). A könyvtáron, illetve a gyűjteményen belüli raktári jelzet szerepelhet itt (ha tudjuk), 12 betűhelynyi hosszon. Ha a jelzet ennél hosszabb, akkor az adat esetleg a következő, MEGJEGYZÉS rovatban szerepelhet.
+
+v160 - Megjegyzések (MEGJEGYZÉS). További esetleges információk helye. Itt szerepelhet a hosszabb raktári jelzeten kívül, hogy mely azonosítójú, esetleg kezdősorú vers szerepel a forrásban, hogy hiányos-e a leírásunk, illetve, hogy miért hiányos. A megjegyzés hossza 200 betűnyi lehet.
