@@ -1,0 +1,1 @@
+The syntax of the JSON exports show: MONTH_DAY_FIELD, where FIELD stands fot the currently updated field from the converted xml export. Fields are noted like: 'v#'. The 'v' does NOT stand for version.
