@@ -59,16 +59,18 @@ v31 dedic
 v32 coloDet [ARRAY]
 	1 után állnak a szerző személyére vonatkozó adatok (általában név, ennek híján egyéb megjelölés)
 	d után a vers keletkezési idejére vonatkozó adatok
-	l után a vers keletkezésének helyére vonatkozó megjegyzések
+	L után a vers keletkezésének helyére vonatkozó megjegyzések
 v33 acr
 	1 "A versnek van akrosztichonja"
 	2 "A versnek nincs akrosztichonja"
 	3 "Nem tudjuk, hogy a versnek van-e akrosztichonja"
 v34 acrost
 v35 acroDet [ARRAY]
-	1 után állnak a szerző személyére vonatkozó adatok (általában név, ennek híján egyéb megjelölés)
+	1, 2 után állnak a szerző személyére vonatkozó adatok (általában név, ennek híján egyéb megjelölés)
+		1 vezetéknév
+		2 keresztnév
 	d után a vers keletkezési idejére vonatkozó adatok
-	l után a vers keletkezésének helyére vonatkozó megjegyzések
+	L után a vers keletkezésének helyére vonatkozó megjegyzések
 v39 note
 v41 int
 	1 "A vers szövege teljes, a terjedelemre vonatkozó adat pontos"
@@ -110,7 +112,19 @@ v48 denom
 	m "muzulmán"
 	v "világi"
 	x "közelebbről meg nem határozott"
-v51 rmny [ARRAY]
+v51 printedSources [ARRAY]	
+	bookId, 
+    v111, 
+    itemId, 
+    v101, 
+    pageSubid, 
+    pageSubnote, 
+    page, 
+    itemSubId, 
+    itemSubnote, 
+    itemMainId, 
+    forrasTipusKod, 
+    value
 v52 mkevb
 v53 melEd [ARRAY]
 v54 edMod [ARRAY]

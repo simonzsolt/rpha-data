@@ -76,7 +76,7 @@ VERSE
 	- 1516 field names were RENAMED to 'date' BY renameField.js
 
 	- Should be handled together with v22. The two fields should be merged to
-	  one object. The object should hold a 'from', 'to' and 'precision' field.
+	  one object. The object should hold a 'from' 'to' and 'precision' field.
 	  Dates should be converted to ISO standard. 
 
 - v22 
@@ -88,13 +88,13 @@ VERSE
 	- Values of v22 should be represented in the date object in the 'precision' 
 	  field. Converted as such:
 
-		1 -> level of precision (e.g. year, month etc.)
+		1 -> level of precision (e.g. year month etc.)
 		2 -> 'ngt'
 		3 -> 'nlt'
 		4 -> 'circa'
 		5 -> 'circa lt'
 		6 -> 'range' ('to' and 'from' fields respectively)
-		7 -> 'any, OR' (dates separated by commas, no need to specify)
+		7 -> 'any OR' (dates separated by commas no need to specify)
 - v23 
 	- 1521 exists AND 1080 does not OF 2601 || 0 unaccounted BY checkExists.js
 	- 0 arrays were found BY checkForArrays.js 
@@ -112,15 +112,14 @@ VERSE
 	- 0 arrays were found BY checkForArrays.js 
 	- 1521 fields values were reset BY setFieldToValue.js
 	- 1521 field names were RENAMED to 'signature' BY renameField.js
+		- Values to converted:
 
-	- Values to converted:
-
-		1 -> Signed by author.
-		2 -> Unkown author.
-		3 -> The verse has been attributed to the author after its composition.
-		4 -> The verse is attributed to the author by modern research.
-		5 -> The verse itself is not signed, but the collection in which it was published bears the signature of the author. 
-		6 -> An anagram of the authors name is present above the verse. 
+			1 -> Signed by author.
+			2 -> Unkown author.
+			3 -> The verse has been attributed to the author after its composition.
+			4 -> The verse is attributed to the author by modern research.
+			5 -> The verse itself is not signed but the collection in which it was published bears the signature of the author. 
+			6 -> An anagram of the authors name is present above the verse. 
 
 - v28 
 	- 1521 exists AND 1080 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -165,7 +164,132 @@ VERSE
 		sd -> dateInfo 
 	  !	sl(L) -> locationInfo 
 
+	- authorInfo should be broken down like author and acrosticInfo.s1 acrosticInfo.s2
 
+- v33 
+	- 1521 exists AND 1080 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1521 fields values were reset BY setFieldToValue.js
+	- 1521 field names were RENAMED to 'acrosticState' BY renameField.js
+
+	- Should be merged with v34 v35
+
+- v34 
+	- 472 exists AND 2129 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 472 fields values were reset BY setFieldToValue.js
+	- 472 field names were RENAMED to 'acrostic' BY renameField.js
+
+- v35
+	- 240 exists AND 2361 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 6 arrays were found BY checkForArrays.js
+	- 6 arrays array fields values were reset BY setFieldToValue.js
+	- 240 field names were RENAMED to 'acrosticInfo' BY renameField.js
+		- Values converted:
+
+			s1 -> surname 
+			s2 -> forename
+			sd -> dateInfo
+			sL -> locationInfo
+- v39
+ 	- 316 exists AND 2285 does not OF 2601 || 0 unaccounted BY checkExists.js
+ 	- 10 arrays were found BY checkForArrays.js
+ 	- 10 arrays array fields values were reset BY setFieldToValue.js
+ 	- 316 field names were RENAMED to 'comments' BY renameField.js
+
+ 	- Values should be remodelled!!
+
+- v41
+	- 1524 exists AND 1077 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1524 fields values were reset BY setFieldToValue.js
+	- 1524 field names were RENAMED to 'integrity' BY renameField.js
+
+	- Should be merged with v42 v43
+	- Values should be converted:
+
+		1 -> Complete. The length of the verse is given precisely.
+		2 -> Fragment. The length of the fragment is given.
+		3 -> Fragment. The complete verse is known therefore the length of the verse is given precisely.  
+		4 -> It can not be decided whether the verse is complete. The length give is uncertain. 
+
+- v42
+	- 1534 exists AND 1067 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 333 arrays were found BY checkForArrays.js
+	- 333 arrays array fields values were reset BY setFieldToValue.js
+	- 1534 field names were RENAMED to 'length' BY renameField.js
+
+- v43
+	- 1535 exists AND 1066 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1535 fields values were reset BY setFieldToValue.js
+	- 1535 field names were RENAMED to 'lengthUnit' BY renameField.js 
+
+	- Convert values:
+		
+		1 -> strofe
+		2 -> verse
+		3 -> paragraph
+
+- v44 
+	- 1515 exists AND 1086 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1515 fields values were reset BY setFieldToValue.js
+	- 1515 field names were RENAMED to 'metreType' BY renameField.js 
+
+- v45
+	- 1393 exists AND 1208 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 1389 arrays were found BY checkForArrays.js
+	- 1393 fields values were reset BY setFieldToValue.js
+	- 1393 field names were RENAMED to 'metreScheme' BY renameField.js
+
+- v46
+	- 1393 exists AND 1208 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1393 fields values were reset BY setFieldToValue.js
+	- 1393 field names were RENAMED to 'rhymeScheme' BY renameField.js 
+
+- v47
+	- 1376 exists AND 1225 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1376 fields values were reset BY setFieldToValue.js
+	- 1376 field names were RENAMED to 'syllNum' BY renameField.js
+
+- v48
+	- 1485 exists AND 1116 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1485 fields values were reset BY setFieldToValue.js
+	- 1485 field names were RENAMED to 'denomination' BY renameField.js
+		- Property conversion:
+
+			k -> catholic
+			p -> protestant
+			r -> reformed
+			e -> evangelical
+			s -> sabbatarian
+			u -> unitarian
+			m -> muslim
+			v -> secular
+			x -> without
+
+- v51
+	- 1038 exists AND 1563 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 639 arrays were found BY checkForArrays.js
+
+	- Property conversion:
+
+		bookId 
+	    v111 -> docBibNum
+	    itemId 
+	    v101 -> docType
+	    pageSubid -> pageSubId
+	    pageSubnote -> pageSubNote 
+	    page 
+	    itemSubId 
+	    itemSubnote -> itemSubNote
+	    itemMainId 
+	    forrasTipusKod -> sourceTypeCode
+	    value
 
 
 =========================
@@ -175,3 +299,7 @@ SOURCE
 mongoimport -d rpha -c source --jsonArray --drop ./source.json
 
 - 5347 item initially
+
+- v101 (Already renamed to doyType in v51)
+
+- v111 (Within v101. Already renamed to docBibNum in v51)

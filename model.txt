@@ -112,7 +112,7 @@ V32 : Information from the colophon.
 
 	sd : Information about the dating of the verse.
 
-	sl : Information about the place of verse's creation. 
+	sL : Information about the place of verse's creation. 
 
 V33 : State of the acrostic.
 
@@ -188,7 +188,7 @@ V46 : Rhyme scheme.
 
 V47 : Number of syllables in a verse based on the metrical scheme.
 
-V48 : Denomination of the source of the verse.
+V48 : Denomination of the source of the verse. Followed by a number showing how many sources are present of the specifiv denomination.
 
 	k : Catholic.
 	
@@ -198,7 +198,7 @@ V48 : Denomination of the source of the verse.
 	
 	e : Evangelical.
 	
-	s : Sabbatarians.
+	s : Sabbatarian.
 	
 	u : Unitarian.
 	
@@ -206,7 +206,7 @@ V48 : Denomination of the source of the verse.
 	
 	v : Secular.
 	
-	x : Undefined.
+	x : Without.
 
 V51 : The printed sources of the verse from before 1701. The code consists of two digits denoting the source, the followed by a ':' the location within the source.
 
