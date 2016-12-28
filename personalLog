@@ -450,6 +450,8 @@ Revisions:
 	- b: 'metreScheme' converted to array
 	- c: 'genre' converted to array
 	- d: 'melodyEd' converted to array
+	- e: 'sharedMelodyBases' converted to array
+	- f: 'writtenSources' converted to array
 
 
 
