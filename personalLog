@@ -484,6 +484,8 @@ Revisions:
 
 		- properties converted (see author)
 
+	- s: 'comments' converted to array
+
 
 
 SOURCE
