@@ -474,6 +474,7 @@ Revisions:
 
 	- l: 'originalTitle' converted to array
 	- m: 'dedicatee' converted to array
+	- n: 'colophonInfo' converted to array
 
 
 
