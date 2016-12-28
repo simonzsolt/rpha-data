@@ -20,7 +20,7 @@ VERSE
 	- 3 arrays were found BY checkForArrays.js
 	- 1529 non arrays were found BY checkForArrays.js
 	- 3 array fields values were reset BY setFieldToValue.js
-	
+
 
 - v5
 	- 998 exists AND 1603 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -411,7 +411,40 @@ VERSE
 	- 26 fields values were reset BY setFieldToValue.js
 	- 26 field names were RENAMED to 'recordRel' BY renameField.js
 
-TODO: v25, v26 undocumented, unchanged!
+TODO: v6, v25, v26 undocumented, unchanged!
+
+
+[
+    "metreScheme", 
+    "genre", 
+    "v26", 
+    "melodyEd", 
+    "sharedMelodyBases", 
+    "writtenSources", 
+    "printedSources", 
+    "hymnId", 
+    "length", 
+    "sourceRel", 
+    "author", 
+    "originalTitle", 
+    "dedicatee", 
+    "colophonInfo", 
+    "date", 
+    "modernEd", 
+    "originalIncipit", 
+    "authorInfluence", 
+    "comments", 
+    "recordRel", 
+    "acrosticInfo", 
+    "facsimileEd", 
+    "sharedMelodyTargets", 
+    "title", 
+    "refrain", 
+    "v6"
+]
+
+
+
 
 SOURCE
 =========================
