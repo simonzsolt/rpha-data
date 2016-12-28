@@ -453,6 +453,7 @@ Revisions:
 	- e: 'sharedMelodyBases' converted to array
 	- f: 'writtenSources' converted to array
 	- g: 'printedSources' converted to array
+	- h: 'hymnId' converted to array
 
 
 
