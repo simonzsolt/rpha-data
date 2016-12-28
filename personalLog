@@ -477,6 +477,7 @@ Revisions:
 	- n: 'colophonInfo' converted to array
 	- o: 'date' converted to array
 	- p: 'modernEd' converted to array
+	- q: 'originalIncipit' converted to array
 
 
 
