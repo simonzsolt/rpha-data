@@ -476,6 +476,7 @@ Revisions:
 	- m: 'dedicatee' converted to array
 	- n: 'colophonInfo' converted to array
 	- o: 'date' converted to array
+	- p: 'modernEd' converted to array
 
 
 
