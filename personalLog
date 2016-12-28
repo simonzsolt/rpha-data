@@ -454,6 +454,7 @@ Revisions:
 	- f: 'writtenSources' converted to array
 	- g: 'printedSources' converted to array
 	- h: 'hymnId' converted to array
+	- i: 'length' converted to array
 
 
 
