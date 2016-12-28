@@ -125,7 +125,7 @@ v51 printedSources [ARRAY]
     itemMainId, 
     forrasTipusKod, 
     value
-v52 mkevb
+v52 mkevb 
 v53 melEd [ARRAY]
 v54 edMod [ARRAY]
 v55 facs
