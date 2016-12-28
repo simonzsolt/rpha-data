@@ -490,6 +490,7 @@ Revisions:
 		- properties converted
 	- v: 'facsimileEd' converted to array
 	- w: 'sharedMelodyTargets' converted to array
+	- x: 'title' converted to array
 
 
 
