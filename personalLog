@@ -478,6 +478,11 @@ Revisions:
 	- o: 'date' converted to array
 	- p: 'modernEd' converted to array
 	- q: 'originalIncipit' converted to array
+	- r: 'authorInfluence' converted to array
+		- id: 0525
+			sM : arcus Junianus -> s2 : Marcus Junianus
+
+		- properties converted (see author)
 
 
 
