@@ -491,6 +491,8 @@ Revisions:
 	- v: 'facsimileEd' converted to array
 	- w: 'sharedMelodyTargets' converted to array
 	- x: 'title' converted to array
+	- y: 'refrain' converted to array
+		- fields values were reset BY setFieldToValue.js
 
 
 
