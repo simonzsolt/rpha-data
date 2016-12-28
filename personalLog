@@ -486,6 +486,8 @@ Revisions:
 
 	- s: 'comments' converted to array
 	- t: 'recordRel' converted to array
+	- u: 'acrosticInfo' converted to array
+		- properties converted
 
 
 
