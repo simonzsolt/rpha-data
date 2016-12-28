@@ -128,7 +128,7 @@ VERSE
 	- 1521 fields values were reset BY setFieldToValue.js
 	- 1521 field names were RENAMED to 'genre' BY renameField.js
 
-	! Value conversion: what to do with tree structure?? !
+	! TODO: Value conversion: what to do with tree structure?? !
 
 - v30
 	- 1521 exists AND 1080 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -414,6 +414,7 @@ VERSE
 TODO: v6, v25, v26 undocumented, unchanged!
 
 
+
 [
     "metreScheme", 
     "genre", 
@@ -443,6 +444,10 @@ TODO: v6, v25, v26 undocumented, unchanged!
     "v6"
 ]
 
+Revisions:
+
+	- a: 'metreScheme' -> 'metreSchema'
+	- b: 'metreScheme' type to array
 
 
 
