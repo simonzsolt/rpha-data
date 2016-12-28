@@ -452,6 +452,7 @@ Revisions:
 	- d: 'melodyEd' converted to array
 	- e: 'sharedMelodyBases' converted to array
 	- f: 'writtenSources' converted to array
+	- g: 'printedSources' converted to array
 
 
 
