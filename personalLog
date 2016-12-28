@@ -472,6 +472,9 @@ Revisions:
 		
 		- 949 fields' properties were converted (see above) 
 
+	- l: 'originalTitle' converted to array
+
+
 
 SOURCE
 =========================
