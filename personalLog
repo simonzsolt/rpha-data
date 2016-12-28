@@ -489,6 +489,7 @@ Revisions:
 	- u: 'acrosticInfo' converted to array
 		- properties converted
 	- v: 'facsimileEd' converted to array
+	- w: 'sharedMelodyTargets' converted to array
 
 
 
