@@ -446,9 +446,10 @@ TODO: v6, v25, v26 undocumented, unchanged!
 
 Revisions:
 
-	- a: 'metreScheme' -> 'metreSchema'
-	- b: 'metreScheme' type to array
-	- c: 'genre' type to array
+	- a: 'metreScheme' renamed to 'metreSchema'
+	- b: 'metreScheme' converted to array
+	- c: 'genre' converted to array
+	- d: 'melodyEd' converted to array
 
 
 
