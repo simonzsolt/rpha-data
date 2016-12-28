@@ -485,6 +485,7 @@ Revisions:
 		- properties converted (see author)
 
 	- s: 'comments' converted to array
+	- t: 'recordRel' converted to array
 
 
 
