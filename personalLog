@@ -456,7 +456,21 @@ Revisions:
 	- h: 'hymnId' converted to array
 	- i: 'length' converted to array
 	- j: 'sourceRel' converted to array
+	- k: 'author' converted to array
+		- values converted:
 
+			- s1 -> surname
+			- s2 -> forename
+			- s3 -> note
+
+			- in arrays:
+
+				- 0291
+				- 0579
+				- 0134
+				- 1350
+		
+		- 949 fields' properties were converted (see above) 
 
 
 SOURCE
