@@ -448,6 +448,7 @@ Revisions:
 
 	- a: 'metreScheme' -> 'metreSchema'
 	- b: 'metreScheme' type to array
+	- c: 'genre' type to array
 
 
 
