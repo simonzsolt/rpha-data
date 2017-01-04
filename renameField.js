@@ -56,4 +56,46 @@ db.verse.find({ v : { $exists : true } }).forEach(function(verse){
 		'v52.value' 			: 'writtenSources.value' 
 	}
 
+	{
+		'v51.bookId' 			: 'printedSources.bookId', 
+		'v51.v111' 				: 'printedSources.docBibNum', 
+		'v51.itemId' 			: 'printedSources.itemId', 
+		'v51.v101' 				: 'printedSources.docType', 
+		'v51.pageSubid' 		: 'printedSources.pageSubId', 
+		'v51.pageSubnote' 		: 'printedSources.pageSubNote', 
+		'v51.page' 				: 'printedSources.page', 
+		'v51.itemSubId' 		: 'printedSources.itemSubId', 
+		'v51.itemSubnote' 		: 'printedSources.itemSubNote', 
+		'v51.itemMainId' 		: 'printedSources.itemMainId', 
+		'v51.forrasTipusKod' 	: 'printedSources.sourceTypeCode', 
+		'v51.value' 			: 'printedSources.value' 	
+
+	}
+
 */
+
+//==================================================================
+
+db.source.updateMany( { v : { $exists : true } }, { $rename : { 'v' : 'NEW_NAME' } } );
+
+
+// IF ARRAY OF EMBEDED DOCUMENTS
+
+var tempArr = [];
+db.source.find({ v : { $exists : true } }).forEach(function(source){
+	if ( Array.isArray(source.v) ) {   	    
+	  	for ( i=source.v.length-1; i>=0; i-- ) {
+	  	  	tempArr.push(
+	  	  		{ 
+	  	  			'surname' : source.v[i].s1, 
+	  	  			'forename' : source.v[i].s2, 
+	  	  			'note' : source.v[i].s3
+	  	  			// '_id' : source._id,
+	  	  			// 'i' : i
+	  	  		}); // push
+	  	} // for
+	  	db.source.update({ '_id' : source._id }, { $set : { 'NEW_FIELD_NAME' : tempArr } });
+	  	db.source.update({ '_id' : source._id }, { $unset : { 'v' : '' } });
+	  	tempArr = [];
+	} // if
+}); // forEach

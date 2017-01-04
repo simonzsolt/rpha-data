@@ -197,7 +197,7 @@ VERSE
  	- 10 arrays array fields values were reset BY setFieldToValue.js
  	- 316 field names were RENAMED to 'comments' BY renameField.js
 
- 	- TODO_ Values should be remodelled!!
+ 	- TODO: Values should be remodelled!!
 
 - v41
 	- 1524 exists AND 1077 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -360,7 +360,7 @@ VERSE
 						  the main record's ID it is related to with an added letter 
 						  at the end.
 		8 -> otherVerse : Datasheet of foreign or post 17th century verses.
-		9 -> mainSource : Main datasheet for sources.
+		9 -> mainSourc e: Main datasheet for sources.
 
 - v161
 	- 23 exists AND 2578 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -495,6 +495,35 @@ Revisions:
 		- fields values were reset BY setFieldToValue.js
 
 
+SOURCE record in VERSE collection
+=================================
+
+TODO: mainSource type records in verse collections should be moved to source collection.
+
+- v112 
+	- 134 exists AND 2467 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 134 fields values were reset BY setFieldToValue.js
+	- 134 field names were RENAMED to 'authorDoc' BY renameField.js
+
+- v113
+	- 125 exists AND 2476 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 125 fields values were reset BY setFieldToValue.js
+	- 125 field names were RENAMED to 'translator' BY renameField.js
+
+- v101
+	- 727 exists AND 1874 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 727 fields values were reset BY setFieldToValue.js
+	- 727 field names were RENAMED to 'docType' BY renameField.js
+
+- v111
+	- 727 exists AND 1874 does not OF 2601 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 727 fields values were reset BY setFieldToValue.js
+	- 727 field names were RENAMED to 'docBibNum' BY renameField.js
+
 
 SOURCE
 =========================
@@ -503,6 +532,177 @@ mongoimport -d rpha -c source --jsonArray --drop ./source.json
 
 - 5347 item initially
 
-- v101 (Already renamed to doyType in v51)
+TODO: "id" : "0549-MKEVB1-0040"; "id" : "0002-MKEVB1-0009"
+	- undocumented record type
+
+
+- v51
+	- 3382 exists AND 1965 does not OF 5347 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 3382 fields values were reset BY setFieldToValue.js
+	- 3382 field names were RENAMED to 'printedSources' BY renameField.js
+
+	- Property conversion:
+
+		bookId 
+	    v111 -> docBibNum
+	    itemId 
+	    v101 -> docType
+	    pageSubid -> pageSubId
+	    pageSubnote -> pageSubNote 
+	    page 
+	    itemSubId 
+	    itemSubnote -> itemSubNote
+	    itemMainId 
+	    forrasTipusKod -> sourceTypeCode
+	    value
+
+- v52
+	- 1959 exists AND 3388 does not OF 5347 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1959 fields values were reset BY setFieldToValue.js
+	- 1959 field names were RENAMED to 'writtenSources' BY renameField.js
+
+	- Property conversion:
+
+		bookId 
+	    v111 -> docBibNum
+	    itemId 
+	    v101 -> docType
+	    pageSubid -> pageSubId
+	    pageSubnote -> pageSubNote 
+	    page 
+	    itemSubId 
+	    itemSubnote -> itemSubNote
+	    itemMainId 
+	    forrasTipusKod -> sourceTypeCode
+	    value
+
+- v112 
+	- in verse collection
+
+- v113
+	- in verse collection
+
+- v101 (Already renamed to docType in v51)
+	- 6 exists AND 5341 does not OF 5347 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 6 fields values were reset BY setFieldToValue.js
+	- 6 field names were RENAMED to 'docType' BY renameField.js
 
 - v111 (Within v101. Already renamed to docBibNum in v51)
+	- 6 exists AND 5341 does not OF 5347 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 6 fields values were reset BY setFieldToValue.js
+	- 6 field names were RENAMED to 'docBibNum' BY renameField.js
+
+- v91
+	- 5347 exists AND 0 does not OF 5347 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+
+===========
+VERSION 2.0
+===========
+
+Due to the mistake made when dividing hte XML export some source documents were mixed in teh cerse collections. These were identified and moved according to the following.
+
+
+	mainVerseCount: 1521
+
+	extVerseCount: 18
+
+	otherVerseCount: 333
+
+	mainSourceCount: 715
+
+	totalVerseTypes: 2587
+
+	totalVerseTypesCheck: 2589
+
+	VERSE
+	-----
+	2601 in total before export and delete
+	1872 in total after export and delete
+
+
+	- 2589 recordType
+		- values: 
+			- mainVerse (#1521)
+			- extVerse (#18)
+			- otherVerse (#333)
+			- mainSource (#715)
+			- 5 (#2)
+	- 0 v91
+	- 12 without any document type field:
+		
+		- RMNY-1309
+		- RMNY-1314
+		- MKEVB0-0806
+		- MKEVB0-0805
+		- RMNY-0856B
+		- MKEVB0-0900
+		- MKEVB0-0901
+		- MKEVB0-0902
+		- MKEVB0-0903
+		- MKEVB0-0904
+		- RMK1-1155B
+		- MKEVB0-0907
+
+	export:
+		- 'recordType' : 'mainSource' 
+		- 'recordType' : '5'
+		- 'recordType' exists : false
+
+	SOURCE
+	------
+	5347 in total before import
+	6076 in total after import
+
+	- 0 recordType
+	- 5347 v91
+		- values: 
+			- 5 (#5341)
+			- 9 (#6) [AKA: mainSource]
+
+
+	LOGS
+	----
+
+	mongoexport -d rpha -c verse --jsonArray -q '{ "recordType" : "mainSource" }' -o ./tempJson/verse_mainSource.json
+
+		- exported 715 records
+
+	mongoexport -d rpha -c verse --jsonArray -q '{ "recordType" : "5" }' -o ./tempJson/verse_5.json
+		
+		- exported 2 records
+
+	mongoexport -d rpha -c verse --jsonArray -q '{ "recordType" : { $exists : false } }' -o ./tempJson/verse_false.json
+
+		- exported 12 records
+
+	mongoimport -d rpha -c source --jsonArray --file ./tempJson/verse_5.json
+
+	 	- Wed Jan  4 21:10:09.545 imported 2 objects
+
+	mongoimport -d rpha -c source --jsonArray --file ./tempJson/verse_false.json
+		
+		- Wed Jan  4 21:11:16.040 check 9 12
+		- Wed Jan  4 21:11:16.040 imported 12 objects
+
+	mongoimport -d rpha -c source --jsonArray --file ./tempJson/verse_mainSource.json
+
+		- Wed Jan  4 21:12:42.734 check 9 715
+		- Wed Jan  4 21:12:42.736 imported 715 objects
+
+
+	db.verse.deleteMany({ 'recordType' : 'mainSource' })
+
+		{ "acknowledged" : true, "deletedCount" : 715.0 }
+
+	db.verse.deleteMany({ 'recordType' : '5' })
+
+		{ "acknowledged" : true, "deletedCount" : 2.0 }
+
+	db.verse.deleteMany({ 'recordType' : { $exists : false } })
+
+		{ "acknowledged" : true, "deletedCount" : 12.0 }

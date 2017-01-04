@@ -1,1 +1,2 @@
 The syntax of the JSON exports show: MONTH_DAY_FIELD, where FIELD stands fot the currently updated field from the converted xml export. Fields are noted like: 'v#'. The 'v' does NOT stand for version.
+Because 'mainSource' type records are mixed in the verse collection, some fields are present in both colelctions, embeded and document level. After v113 the filenames do not come in order of documented fileds, but should always be sorted by timestamp.

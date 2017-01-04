@@ -164,7 +164,8 @@ v101 - A dokumentum típusa (TIPUS). A rovat hossza 20 betűhelynyi. A dokumentu
 "RMG" - Olyan nyomtatvány, amely nem szerepel sem az RMNY-nyel, sem az RMK1-gyel jelölt bibliográfiákban. Ezek felsorolása szintén megtalálható a repertórium nyomtatott változatában.
 v111 - A dokumentum bibliográfián belüli sorszáma (SORSZÁM). A TIPUS rovatban megjelölt bibliográfiában szereplő tételszám szerepel itt 5 betűhelyen, amiből az első négy helyen kötelezően négyjegyű számnak kell állnia (szükség szerint az elején nullákkal kiegészítve), az ötödik helyen pedig betű vagy számjegy is állhat, ha a bibliográfia tételszáma betűvel vagy számmal van kiegészítve. Tehát (az egyenlőségjelek jobb oldalán a TIPUS és SORSZÁM rovatok adatait szerepelnek kötőjellel elválasztva):
 
-RMNY 353/2 = RMNY-03532 RMK I 256A = RMK1-0256A
+	RMNY 353/2 = RMNY-03532 RMK I 256A = RMK1-0256A
+
 v112 - A dokumentum szerzője (SZERZŐ). Ha a szóban forgó nyomtatvány szerzőjét ismerjük, akkor ebben a rovatban szerepel a neve, nem a főlapon megszokott alrovatos szerkezetben, hanem hagyományos alakban. Ha a kiadvány több művet tartalmaz (például két históriát), és a bibliográfia több szerzőt és címet is közöl, akkor minden esetben az első szerzőt és címet vesszük figyelembe, még akkor is, ha a repertórium ezt a verset nem is tartalmazza, mert a kötet azonosíthatósága a fontos, és a SORSZÁM rovat 5. betűhelyén szereplő jelölés eligazít a kiadvány részei között. A rovat hossza 80 betűhelynyi.
 
 v113 - A dokumentum fordítója (FORDÍTÓ). Amennyiben a kézirat vagy nyomtatvány nem eredeti, hanem fordítás, úgy a mű fordítójának neve szerepel itt, a SZERZŐ rovat névjelölési gyakorlatának megfelelően. A rovat hossza 80 betűhelynyi.
