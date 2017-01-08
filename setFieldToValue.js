@@ -9,7 +9,7 @@ db.verse.find( { v2 : { $exists : true } } ).forEach(function(verse){
 // ARRAY TYPE // NON ARRAY FIELDS
 
 db.verse.find({ v : { $exists : true } }).forEach(function(verse){
-	if (!Array.isArray(verse.v)) {
+	if (Array.isArray(verse.v)) {
 		db.verse.update( { _id : verse._id }, { $set : { 'v' : verse.v.value } } );
 	} // if
 }); // db.verse.find
@@ -20,7 +20,7 @@ db.verse.find({ v : { $exists : true } }).forEach(function(verse){
 var tempArr = [];
 
 db.verse.find({ v : { $exists : true } }).forEach(function(verse){
-	if (!Array.isArray(verse.v)) {
+	if (Array.isArray(verse.v)) {
 
 		for (var i = verse.v.length - 1; i >= 0; i--) {
 			tempArr.push(verse.v[i].value)

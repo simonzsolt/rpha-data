@@ -20,6 +20,7 @@ VERSE
 	- 3 arrays were found BY checkForArrays.js
 	- 1529 non arrays were found BY checkForArrays.js
 	- 3 array fields values were reset BY setFieldToValue.js
+	- 1529 field names were RENAMED to 'title' BY renameField.js
 
 
 - v5
@@ -599,6 +600,7 @@ TODO: "id" : "0549-MKEVB1-0040"; "id" : "0002-MKEVB1-0009"
 - v91
 	- 5347 exists AND 0 does not OF 5347 || 0 unaccounted BY checkExists.js
 	- 0 arrays were found BY checkForArrays.js
+	- !Unfinished - resumed in version 2.0
 
 ===========
 VERSION 2.0
@@ -658,7 +660,7 @@ Due to the mistake made when dividing hte XML export some source documents were 
 	5347 in total before import
 	6076 in total after import
 
-	- 0 recordType
+	- 0 recordType	
 	- 5347 v91
 		- values: 
 			- 5 (#5341)
@@ -706,3 +708,326 @@ Due to the mistake made when dividing hte XML export some source documents were 
 	db.verse.deleteMany({ 'recordType' : { $exists : false } })
 
 		{ "acknowledged" : true, "deletedCount" : 12.0 }
+
+SOURCE 
+=========================
+
+- v91
+	- 5347 exists AND 729 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 5347 fields values were reset BY setFieldToValue.js
+	- 5347 field names were RENAMED to 'recordType' BY renameField.js
+
+- v43
+	- 1815 exists AND 4261 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1815 fields values were reset BY setFieldToValue.js
+	- 1815 field names were RENAMED to 'lengthUnit' BY renameField.js 
+
+	- Convert values:
+		
+		1 -> strofe
+		2 -> verse
+		3 -> paragraph
+
+- v41 
+	- 1669 exists AND 4407 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1669 fields values were reset BY setFieldToValue.js
+	- 1699 field names were RENAMED to 'integrity' BY renameField.js
+
+	- TODO: Should be merged with v42 v43
+	- TODO: Values should be converted:
+
+		1 -> Complete. The length of the verse is given precisely.
+		2 -> Fragment. The length of the fragment is given.
+		3 -> Fragment. The complete verse is known therefore the length of the verse is given precisely.  
+		4 -> It can not be decided whether the verse is complete. The length give is uncertain.  
+
+- v42
+	- 1812 exists AND 4264 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1812 fields values were reset BY setFieldToValue.js
+	- 1812 field names were RENAMED to 'length' BY renameField.js
+
+
+- v201
+	- 5343 exists AND 733 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- !UNDOCUMENTED
+	- seems to be verse id (e.g. 0341)
+
+- v200
+	- !UNDOCUMENTED
+	- seems to be source document id (e.g. MKEVB1-0128)
+
+- v39
+	- 611 exists AND 5465 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 611 field names were RENAMED to 'comments' BY renameField.js
+ 	- TODO: Values should be remodelled!! 
+
+- v3
+	- 2945 exists AND 3131 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 2945 fields values were reset BY setFieldToValue.js
+	- 2945 field names were RENAMED to 'title' BY renameField.js
+
+- v34 
+	- 1049 exists AND 5027 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1049 fields values were reset BY setFieldToValue.js
+	- 1049 field names were RENAMED to 'acros1049 tic' BY renameField.js
+
+- v2
+	- 607 exists AND 5469 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 607 fields values were reset BY setFieldToValue.js
+	- 607 field names were RENAMED to 'incipit' BY renameField.js
+
+- v33
+	- 1017 exists AND 5059 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 607 fields values were reset BY setFieldToValue.js
+	- 1017 field names were RENAMED to 'acrostiState' BY renameField.js 
+		
+		- Instead of conversion this shoould be merged with 'acrostic' field
+			1 ->  (The verse has an acrostic)
+			2 ->  (The verse does not have an acrostic)
+			3 ->  (It is unknown whether the verse has an acrostic or not)
+
+- v61
+	- 311 exists AND 5765 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 3 arrays were found BY checkForArrays.js
+
+		ObjectId("585a8fa2389417165f456cea")
+		ObjectId("585a8fa2389417165f456d19")
+		ObjectId("585a8fa2389417165f456d2c")
+
+	- !UNDOCUMENTED properties
+		- s1 probaby the ID of verse to which it refers to as sharing melody
+		- s2 unkown number
+		- s3 probably a comment
+
+	- ! was not renamed to sharedMelodyTargets
+
+- v31
+	- 8 exists AND 6068 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 8 fields values were reset BY setFieldToValue.js
+	- 8 field names were RENAMED to 'dedicatee' BY renameField.js 
+		
+- v22
+	- 1 exists AND 6075 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 1 field values was reset BY setFieldToValue.js
+	- 1 field name was RENAMED to 'datePrecision' BY renameField.js 
+
+	- TODO: Values of v22 should be represented in the date object in the 'precision' 
+	  field. Converted as such:
+
+		1 -> level of precision (e.g. year month etc.)
+		2 -> 'ngt'
+		3 -> 'nlt'
+		4 -> 'circa'
+		5 -> 'circa lt'
+		6 -> 'range' ('to' and 'from' fields respectively)
+		7 -> 'any OR' (dates separated by commas no need to specify)
+
+- v32 
+	- 31 exists AND 6045 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 31 field names were RENAMED to 'colophonInfo' BY renameField.js
+
+		- Property conversion:
+			s1 -> authorInfo 
+			sd -> dateInfo 
+		  	sl -> locationInfo 
+
+	- TODO: Should be merged with v30.
+	- TODO: authorInfo should be broken down like author and acrosticInfo.s1 acrosticInfo.s2
+
+- v47
+	- 152 exists AND 5924 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 152 fields values were reset BY setFieldToValue.js
+	- 152 field names were RENAMED to 'syllNum' BY renameField.js
+
+- v46
+	- 156 exists AND 5920 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 156 fields values were reset BY setFieldToValue.js
+	- 156 field names were RENAMED to 'rhymeScheme' BY renameField.js 
+
+- v45
+	- 157 exists AND 5919 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 2 arrays were found BY checkForArrays.js
+		ObjectId("585a8fa4389417165f4579e9")
+		ObjectId("585a8fa4389417165f45814d")
+	- 157 fields values were reset BY setFieldToValue.js
+	- 157 field names were RENAMED to 'metreScheme' BY renameField.js
+
+- v56
+	- !UNDOCUMENTED
+	- 3370 exists AND 2706 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- !UNDOCUMENTED properties:
+	    sg 
+	    sd 
+	    value 
+	    sj 
+	    sa 
+	    sh 
+	    sf 
+	    si 
+	    sb 
+	    se 
+	    sc 
+	    sk
+
+- v30
+	- 74 exists AND 6002 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 74 fields values were reset BY setFieldToValue.js
+	- 74 field names were RENAMED to 'colophonState' BY renameField.js
+
+	- TODO: Should be merged together with v32. Value conversion: 
+
+		1 -> The verse has a colophon.
+		2 -> The verse does not have a colophon.
+		3 -> It is unknown wheter the verse has a colophon or not.
+
+- v35
+	- 12 exists AND 6064 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 12 fields values were reset BY setFieldToValue.js
+	- 12 field names were RENAMED to 'acrosticInfo' BY renameField.js
+		- Values converted:
+			s1 -> name 
+			sd -> dateInfo
+			sl -> locationInfo
+
+- v154 
+	- 76 exists AND 6000 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 76 fields values were reset BY setFieldToValue.js
+	- 76 field names were RENAMED to 'docShelfmark' BY renameField.js 
+
+- v153
+	- 27 exists AND 6049 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 27 fields values were reset BY setFieldToValue.js
+	- 27 field names were RENAMED to 'collection' BY renameField.js 
+
+
+- v152
+	- 128 exists AND 5948 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 128 fields values were reset BY setFieldToValue.js
+	- 128 field names were RENAMED to 'library' BY renameField.js 
+
+- v151
+	- 125 exists AND 5951 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 125 fields values were reset BY setFieldToValue.js
+	- 125 field names were RENAMED to 'docLocation' BY renameField.js 
+ 
+- v142
+	- 708 exists AND 5368 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 708 fields values were reset BY setFieldToValue.js
+	- 708 field names were RENAMED to 'docDenomination' BY renameField.js 
+
+- v132
+	- 733 exists AND 5343 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 733 fields values were reset BY setFieldToValue.js
+	- 733 field names were RENAMED to 'docDate' BY renameField.js 
+
+- v121
+	- 350 exists AND 5726 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 350 fields values were reset BY setFieldToValue.js
+	- 350 field names were RENAMED to 'docNewTitle' BY renameField.js 
+
+- v163
+	- 82 exists AND 5994 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 82 fields were reset BY setFieldToValue.js
+	- 82 field names were RENAMED to 'refrain' BY renameField.js
+
+	- TODO: Value conversion:
+		+  -> noRefrain  				: No refrain is present in the verse. 
+		R0 -> refrain  					: A verse with a refrain.
+		R1 -> sysAltRhymingRefrain 		: Systematically alternating rhyming refrain. 
+		R2 -> occRefrain 				: Occasionally assigned refrain.
+		R3 -> unsysAltRhymingRefrain 	: Unsystematically alternating rhyming refrain. 
+		R4 -> unidentified 				: A metre can not be identified, although the 
+										  verse could have had a refrain.
+		I0 -> repeated 					: Repeated verse.
+
+		!! Values are not described properly (e.g. '------R2')!! 
+
+- v167
+	!UNDOCUMENTED
+	- 570 exists AND 5506 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 570 fields were reset BY setFieldToValue.js 
+	
+- v166
+	!UNDOCUMENTED
+	- 418 exists AND 5658 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 418 fields were reset BY setFieldToValue.js 
+
+- v5
+	- 2 exists AND 6074 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 2 fields were reset BY setFieldToValue.js 
+	- 2 field names were RENAMED to 'author' BY renameField.js
+		- Property conversion:
+			- s1 -> surname
+			- s2 -> forename
+- v131
+	- 468 exists AND 5608 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 468 fields were reset BY setFieldToValue.js 
+	- 468 field names were RENAMED to 'printingLocation' BY renameField.js
+	
+- v122
+	- 655 exists AND 5421 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 655 fields were reset BY setFieldToValue.js 
+	- 655 field names were RENAMED to 'docOriginalTitle' BY renameField.js
+	
+- v141
+	- 394 exists AND 5682 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 394 fields were reset BY setFieldToValue.js 
+	- 394 field names were RENAMED to 'docGenre' BY renameField.js
+
+- v133
+	- 402 exists AND 5674 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 402 fields were reset BY setFieldToValue.js 
+	- 402 field names were RENAMED to 'nameOfPrinter' BY renameField.js
+	
+- v160
+	- 100 exists AND 5976 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 160 fields were reset BY setFieldToValue.js 
+	- 160 field names were RENAMED to 'comments' BY renameField.js
+	 
+- v155
+	- 69 exists AND 6007 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 69 fields were reset BY setFieldToValue.js 
+	- 69 field names were RENAMED to 'volName' BY renameField.js
+
+	(402 field names were RENAMED from 'nameOfPrinter' to 'printerName' BY renameField.js)
+
+- v156
+	(76 field names were RENAMED from 'docShelfmark' to 'docVolShelfmark' BY renameField.js)
+	- 33 exists AND 6043 does not OF 6076 || 0 unaccounted BY checkExists.js
+	- 0 arrays were found BY checkForArrays.js
+	- 33 fields were reset BY setFieldToValue.js 
+	- 33 field names were RENAMED to 'docShelfmark' BY renameField.js
