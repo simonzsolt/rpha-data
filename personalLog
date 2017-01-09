@@ -102,7 +102,7 @@ VERSE
 	- 1521 fields values were reset BY setFieldToValue.js
 	- 1521 field names were RENAMED to 'song' BY renameField.js
 
-	- TODO: Values should be converted as such:
+	- Values should be converted as such:
 		
 		1 -> Not sung.
 		2 -> Sung.	
@@ -198,8 +198,6 @@ VERSE
  	- 10 arrays array fields values were reset BY setFieldToValue.js
  	- 316 field names were RENAMED to 'comments' BY renameField.js
 
- 	- TODO: Values should be remodelled!!
-
 - v41
 	- 1524 exists AND 1077 does not OF 2601 || 0 unaccounted BY checkExists.js
 	- 0 arrays were found BY checkForArrays.js
@@ -211,8 +209,9 @@ VERSE
 
 		1 -> Complete. The length of the verse is given precisely.
 		2 -> Fragment. The length of the fragment is given.
-		3 -> Fragment. The complete verse is known therefore the length of the verse is given precisely.  
-		4 -> It can not be decided whether the verse is complete. The length give is uncertain. 
+		3 -> Fragment. The complete verse is known therefore the length of the verse is given 	   precisely.  
+		4 -> It can not be decided whether the verse is complete. The length give is 
+			 uncertain. 
 
 - v42
 	- 1534 exists AND 1067 does not OF 2601 || 0 unaccounted BY checkExists.js
@@ -1031,3 +1030,14 @@ SOURCE
 	- 0 arrays were found BY checkForArrays.js
 	- 33 fields were reset BY setFieldToValue.js 
 	- 33 field names were RENAMED to 'docShelfmark' BY renameField.js
+
+-----------
+2. REVISION
+-----------
+
+- a 
+	v23
+	- Values should be converted as such:		
+		1 -> Not sung.
+		2 -> Sung.	
+		3 -> Uncertain.
