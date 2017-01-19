@@ -1040,7 +1040,7 @@ VERSE
 - b
     v161 (partialRel)
         - converted to arrays
--c
+- c
     printedSource, writtenSources
     - remodelled fo better consistenty:
     source: [
@@ -1048,9 +1048,13 @@ VERSE
         written: []
     ]
 
--d
+- d
     - sourceId added to sourve entries in verse docs
     - sourceIds.js
+
+- e
+    - source field contains array of source docs
+    - source docs get 'type' and 'sourceId' field
 
 SOURCE
 -----------
@@ -1059,4 +1063,4 @@ SOURCE
     - rename printedSource, writtenSources to source
     - add source.type property:
         - print
-        - written 
+        - written
