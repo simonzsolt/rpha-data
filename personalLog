@@ -1040,3 +1040,23 @@ VERSE
 - b
     v161 (partialRel)
         - converted to arrays
+-c
+    printedSource, writtenSources
+    - remodelled fo better consistenty:
+    source: [
+        print: []
+        written: []
+    ]
+
+-d
+    - sourceId added to sourve entries in verse docs
+    - sourceIds.js
+
+SOURCE
+-----------
+
+- a
+    - rename printedSource, writtenSources to source
+    - add source.type property:
+        - print
+        - written 
