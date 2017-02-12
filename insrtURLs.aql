@@ -1,0 +1,12 @@
+FOR s IN source
+    FOR u IN url
+        FILTER s.id==u.sourceID
+        // UPDATE  { _key: s._key, url: u.url } IN source
+
+
+        RETURN {
+            "key": s._key,
+            "source": s.id,
+            "url": s.url
+        }
+        

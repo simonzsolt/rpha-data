@@ -1064,3 +1064,9 @@ SOURCE
     - add source.type property:
         - print
         - written
+- b
+	- id RMK1-1108A
+	- record type changed from '9' to 'mainSource'
+- c
+	- isnert urls form 'MEK_URLs2.csv'
+	- saved as arango dump file in 'arangoExports' folder

@@ -1,0 +1,18 @@
+FOR v IN verse
+    FOR s IN source
+        FILTER s.recordType == "5" && v.id == SPLIT(s.id, "-")[0]
+
+
+        INSERT {
+            "_from": v._id,
+            "_to": s._id,
+            "id": s.id
+        } IN hasSource
+
+        /*
+        RETURN {
+            "_from": v.id,
+            "_to": s.id
+        }
+        */
+        
