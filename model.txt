@@ -271,7 +271,7 @@ V164 : Echo.
 V165 : Internal referencing. IDs are given so one record can be connected with others. This field is used to connect different types of records e.g. main and extension datasheets.
 
 ---------------
-SOURCES RECORDS
+SOURCE RECORDS
 ---------------
 
 V101 : Type of the document.
