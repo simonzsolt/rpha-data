@@ -1,0 +1,44 @@
+"docBibNum" : "0017",
+"docType" : "RMNY",
+"authorDoc" : "Aesopus",
+"translator" : "Pesti Gábor",
+"printerName" : "Singriener, Johann"
+"printingLocation" : "Bécs",
+"docDenomination" : "világi",
+"docDate" : "1536",
+"docNewTitle" : "Ezópus fabulái",
+"docOriginalTitle" : "Aesopi Phrygis fabulae",
+"docGenre" : "tanulságos mesék, fabulák",
+"facsimileEd" : [ "Ezópus fabulái, Bp. 1950" ],
+
+"type" : "print",
+
+
+"sourceId" : "0003-RMNY-0017"
+"page" : "0067",
+"pageSubId" : "A",
+
+______________________________________________________
+
+sourceId (or jsut the verse id derived from this)
+type
+pageSubId
+page
+docBibNum
+url
+docVolShelfmark
+docNewTitle
+docDate
+docDenomination
+docLocation
+library
+collection
+docOriginalTitle
+printingLocation
+printerName
+docGenre
+authorDoc
+translator
+volName
+docShelfmark
+facsimileEd
