@@ -1070,3 +1070,11 @@ SOURCE
 - c
 	- isnert urls form 'MEK_URLs2.csv'
 	- saved as arango dump file in 'arangoExports' folder
+
+===========
+VERSION 3.0
+===========
+
+- insert 716 'mainSource' records to 'newSources' collection
+  	- schema: newSourcemodel
+	- script: newRPHAquery.js

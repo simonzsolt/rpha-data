@@ -1,44 +1,124 @@
-"docBibNum" : "0017",
-"docType" : "RMNY",
-"authorDoc" : "Aesopus",
-"translator" : "Pesti Gábor",
-"printerName" : "Singriener, Johann"
-"printingLocation" : "Bécs",
-"docDenomination" : "világi",
-"docDate" : "1536",
-"docNewTitle" : "Ezópus fabulái",
-"docOriginalTitle" : "Aesopi Phrygis fabulae",
-"docGenre" : "tanulságos mesék, fabulák",
-"facsimileEd" : [ "Ezópus fabulái, Bp. 1950" ],
-
-"type" : "print",
-
-
-"sourceId" : "0003-RMNY-0017"
-"page" : "0067",
-"pageSubId" : "A",
-
-______________________________________________________
-
-sourceId (or jsut the verse id derived from this)
-type
-pageSubId
-page
 docBibNum
-url
-docVolShelfmark
+docType
+docOriginalTitle
 docNewTitle
+docGenre
+authorDoc ->> docAuthor
+translator
 docDate
 docDenomination
 docLocation
 library
 collection
-docOriginalTitle
+docShelfmark
+volName ->> docVolName
+docVolShelfmark
+facsimileEd
 printingLocation
 printerName
-docGenre
-authorDoc
-translator
-volName
-docShelfmark
-facsimileEd
+type
+verses (ARRAY of variations in sources)
+	id (of verse)
+	pageSubId
+	page
+	url
+	type
+	length
+	integrity
+	lengthUnit
+	comments
+	title
+	acrostic
+	incipit
+	acrostiState
+	dedicatee
+	datePrecision
+	colophonInfo
+	metreScheme
+	rhymeScheme
+	syllNum
+	colophonState
+	acrosticInfo
+	refrain
+	author
+
+
+*******************
+
+
+comments
+title
+acrostic
+incipit
+acrostiState
+dedicatee
+datePrecision
+colophonInfo
+metreScheme
+rhymeScheme
+syllNum
+colophonState
+acrosticInfo
+refrain
+author
+
+v201
+v200
+id
+_id
+source
+v61
+v56
+v167
+v166
+==========================================
+==========================================
+
+"uniqueSource" : [
+	"author",
+	"v166",
+	"v167",
+	"refrain",
+	"acrosticInfo",
+	"colophonState",
+	"v56",
+	"syllNum",
+	"rhymeScheme",
+	"metreScheme",
+	"colophonInfo",
+	"datePrecision",
+	"dedicatee",
+	"v61",
+	"acrostiState",
+	"incipit",
+	"acrostic",
+	"title",
+	"comments",
+	"_id",
+	"id",
+	"v200",
+	"v201",
+	"recordType",
+	"lengthUnit",
+	"integrity",
+	"length",
+	"source"
+]
+
+"uniqueVerse" : [
+	"url",
+	"bookId",
+	"docBibNum",
+	"docType",
+	"itemId",
+	"itemMainId",
+	"itemSubId",
+	"itemSubNote",
+	"page",
+	"pageSubId",
+	"pageSubNote",
+	"sourceTypeCode",
+	"value",
+	"type",
+	"sourceId"
+]
