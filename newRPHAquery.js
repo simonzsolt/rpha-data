@@ -115,79 +115,180 @@ db.verse.find({
 // from type '5' sources and 'verse.source' fields
 
 db.newSources.find().forEach(function(newSource) {
-	db.source.find({
-		"recordType": "5"
-	}).forEach(function(source) {
-		db.verse.find({
-			"source": {
-				$exists: true
-			}
-		}).forEach(function(verse) {
-			for (i = verse.source.length - 1; i >= 0; i--) {
-				if (source.source.bookId == verse.source[i].bookId) {
+
+	db.source.find({ "recordType": "5" }).forEach(function(source) {
+
+		db.verse.find({ "source": { $exists: true } }).forEach(function(verse) {
+
+				for (i = verse.source.length - 1; i >= 0; i--) {
+
+				if (source.source && source.source.bookId == verse.source[i].bookId) {
 					if (source.id.split("-")[2] == newSource.docBibNum &&
 						source.id.split("-")[1] == newSource.docType) {
-						db.newSources.updateOne({
-							"_id": newSource._id
-						}, {
-							$push: {
+						print(source.source.bookI + ' :: ' + verse.source[i].bookId + ' :: ' + source.id + ' :: ' + newSource.docType + '-' + newSource.docBibNum)
+						/*
+						db.newSources.updateOne({"_id": newSource._id }, { $push: {
 								"verses": {
 									"id": verse.id,
-									"pageSubId": verse.source[i].pageSubId,
-									"page": verse.source[i].page,
-									"url": verse.source[i].url,
-									"type": verse.source[i].type,
-									"length": source.length,
-									"integrity": source.integrity,
-									"lengthUnit": source.lengthUnit,
-									"comments":source.comments,
-									"title": source.title,
-									"acrostic": source.acrostic,
 									"incipit": source.incipit,
-									"acrostiState": source.acrostiState,
+									"author": source.author,
 									"dedicatee": source.dedicatee,
-									"datePrecision": source.datePrecision,
-									"colophonInfo": source.colophonInfo,
+									"title": source.title,
 									"metreScheme": source.metreScheme,
 									"rhymeScheme": source.rhymeScheme,
-									"syllNum": source.syllNum,
-									"colophonState": source.colophonState,
+									"datePrecision": source.datePrecision,
+									"acrostic": source.acrostic,
+									"acrostiState": source.acrostiState,
 									"acrosticInfo": source.acrosticInfo,
+									"colophonInfo": source.colophonInfo,
+									"colophonState": source.colophonState,
+									"syllNum": source.syllNum,
+									"length": source.length,
+									"lengthUnit": source.lengthUnit,
 									"refrain": source.refrain,
-									"author": source.author
+									"pageSubId": verse.source[i].pageSubId,
+									"page": verse.source[i].page,
+									"comments":source.comments,
+									"integrity": source.integrity,
+									"type": verse.source[i].type,
+									"url": verse.source[i].url,
+									"tradition": source.tradition,
+									"song": source.song,
+									"signature": source.signature,
+									"modernEd": source.modernEd,
+									"metreType": source.metreType,
+									"metreSchema": source.metreSchema,
+									"genre": source.genre,
+									"denomination": source.denomination,
+									"date": source.date,
+									"originalIncipit": source.originalIncipit,
+									"sourceRel": source.sourceRel,
+									"authorInfluence": source.authorInfluence,
+									"sharedMelodyBases": source.sharedMelodyBases,
+									"originalTitle": source.originalTitle,
+									"melodyEd": source.melodyEd,
+									"hymnId": source.hymnId,
+									"partialRel": source.partialRel,
+									"recordRel": source.recordRel,
+									"facsimileEd": source.facsimileEd,
+									"echo": source.echo,
+									"originalLanguage": source.originalLanguage,
+									"sharedMelodyTargets": source.sharedMelodyTargets
+
 								}
-							}
-						})
+							}})
+						*/
 					}
 				} // if source == verse
-
 				else if (verse.source[i].docBibNum == newSource.docBibNum &&
 					verse.source[i].docType == newSource.docType) {
-					db.newSources.updateOne({
-						"_id": newSource._id
-					}, {
-						$push: {
-							"verses": {
-								// document from verse
-							}
-						}
-					})
+					print("verse")
+					/*
+					db.newSources.updateOne({ "_id": newSource._id }, { $push: {"verses": {
+								"id": verse.id,
+								"incipit": verse.incipit,
+								"author": verse.author,
+								"dedicatee": verse.dedicatee,
+								"title": verse.title,
+								"metreScheme": verse.metreScheme,
+								"rhymeScheme": verse.rhymeScheme,
+								"datePrecision": verse.datePrecision,
+								"acrostic": verse.acrostic,
+								"acrostiState": verse.acrostiState,
+								"acrosticInfo": verse.acrosticInfo,
+								"colophonInfo": verse.colophonInfo,
+								"colophonState": verse.colophonState,
+								"syllNum": verse.syllNum,
+								"length": verse.length,
+								"lengthUnit": verse.lengthUnit,
+								"refrain": verse.refrain,
+								"pageSubId": verse.source[i].pageSubId,
+								"page": verse.source[i].page,
+								"comments":verse.comments,
+								"integrity": verse.integrity,
+								"type": verse.source[i].type,
+								"url": verse.source[i].url,
+								"tradition": verse.tradition,
+								"song": verse.song,
+								"signature": verse.signature,
+								"modernEd": verse.modernEd,
+								"metreType": verse.metreType,
+								"metreSchema": verse.metreSchema,
+								"genre": verse.genre,
+								"denomination": verse.denomination,
+								"date": verse.date,
+								"originalIncipit": verse.originalIncipit,
+								"sourceRel": verse.sourceRel,
+								"authorInfluence": verse.authorInfluence,
+								"sharedMelodyBases": verse.sharedMelodyBases,
+								"originalTitle": verse.originalTitle,
+								"melodyEd": verse.melodyEd,
+								"hymnId": verse.hymnId,
+								"partialRel": verse.partialRel,
+								"recordRel": verse.recordRel,
+								"facsimileEd": verse.facsimileEd,
+								"echo": verse.echo,
+								"originalLanguage": verse.originalLanguage,
+								"sharedMelodyTargets": verse.sharedMelodyTargets
+							}} })
+					*/
 				}
-
 			} // for verse.source
 		}); // forEach verse
-
 		if (source.id.split("-")[2] == newSource.docBibNum &&
 			source.id.split("-")[1] == newSource.docType) {
-			db.newSources.updateOne({
-				"_id": newSource._id
-			}, {
-				$push: {
+			print("source")
+			/*
+			db.newSources.updateOne({ "_id": newSource._id }, { $push: {
 					"verses": {
-						// document from source records
+						"id": source.id.split("-")[0],
+						"incipit": source.incipit,
+						"author": source.author,
+						"dedicatee": source.dedicatee,
+						"title": source.title,
+						"metreScheme": source.metreScheme,
+						"rhymeScheme": source.rhymeScheme,
+						"datePrecision": source.datePrecision,
+						"acrostic": source.acrostic,
+						"acrostiState": source.acrostiState,
+						"acrosticInfo": source.acrosticInfo,
+						"colophonInfo": source.colophonInfo,
+						"colophonState": source.colophonState,
+						"syllNum": source.syllNum,
+						"length": source.length,
+						"lengthUnit": source.lengthUnit,
+						"refrain": source.refrain,
+						"pageSubId": source.source.pageSubId,
+						"page": source.source.page,
+						"comments":source.comments,
+						"integrity": source.integrity,
+						"type": source.source.type,
+						"url": source.source.url,
+						"tradition": source.tradition,
+						"song": source.song,
+						"signature": source.signature,
+						"modernEd": source.modernEd,
+						"metreType": source.metreType,
+						"metreSchema": source.metreSchema,
+						"genre": source.genre,
+						"denomination": source.denomination,
+						"date": source.date,
+						"originalIncipit": source.originalIncipit,
+						"sourceRel": source.sourceRel,
+						"authorInfluence": source.authorInfluence,
+						"sharedMelodyBases": source.sharedMelodyBases,
+						"originalTitle": source.originalTitle,
+						"melodyEd": source.melodyEd,
+						"hymnId": source.hymnId,
+						"partialRel": source.partialRel,
+						"recordRel": source.recordRel,
+						"facsimileEd": source.facsimileEd,
+						"echo": source.echo,
+						"originalLanguage": source.originalLanguage,
+						"sharedMelodyTargets": source.sharedMelodyTargets
 					}
-				}
-			})
+				} } )
+			*/
 		}
 	}) // forEach source
 }) // forEach newSource
@@ -248,6 +349,116 @@ db.verse.find({
 					}
 				})
 			}
+		}
+	})
+})
+//======================================================================================
+// create versesFromBoth collection
+// TODO: two source with type '5' and no 'source.source' field
+db.sourcesFromVerses.find().forEach(function(sourceFromverse){
+	db.source.find({"recordType":"5"}).forEach(function(source){
+		if (source.source && sourceFromverse.bookId == source.source.bookId) {
+		  if( db.VersesfromBoth.findOne({"bookId":source.source.bookId}) !== null ){
+				db.VersesfromBoth.updateOne({"bookId":source.source.bookId},{$push:{"verses":{
+									"id": sourceFromverse.sourceId.split("-")[0],
+									"incipit": source.incipit,
+									"author": source.author,
+									"dedicatee": source.dedicatee,
+									"title": source.title,
+									"metreScheme": source.metreScheme,
+									"rhymeScheme": source.rhymeScheme,
+									"datePrecision": source.datePrecision,
+									"acrostic": source.acrostic,
+									"acrostiState": source.acrostiState,
+									"acrosticInfo": source.acrosticInfo,
+									"colophonInfo": source.colophonInfo,
+									"colophonState": source.colophonState,
+									"syllNum": source.syllNum,
+									"length": source.length,
+									"lengthUnit": source.lengthUnit,
+									"refrain": source.refrain,
+									"pageSubId": sourceFromverse.pageSubId,
+									"page": sourceFromverse.page,
+									"comments":source.comments,
+									"integrity": source.integrity,
+									"type": sourceFromverse.type,
+									"url": sourceFromverse.url,
+									"tradition": source.tradition,
+									"song": source.song,
+									"signature": source.signature,
+									"modernEd": source.modernEd,
+									"metreType": source.metreType,
+									"metreSchema": source.metreSchema,
+									"genre": source.genre,
+									"denomination": source.denomination,
+									"date": source.date,
+									"originalIncipit": source.originalIncipit,
+									"sourceRel": source.sourceRel,
+									"authorInfluence": source.authorInfluence,
+									"sharedMelodyBases": source.sharedMelodyBases,
+									"originalTitle": source.originalTitle,
+									"melodyEd": source.melodyEd,
+									"hymnId": source.hymnId,
+									"partialRel": source.partialRel,
+									"recordRel": source.recordRel,
+									"facsimileEd": source.facsimileEd,
+									"echo": source.echo,
+									"originalLanguage": source.originalLanguage,
+									"sharedMelodyTargets": source.sharedMelodyTargets
+
+				}}})
+		  } else if( db.VersesfromBoth.findOne({"bookId":source.source.bookId}) == null ){
+		  	db.VersesfromBoth.insert({
+		  	"bookId": source.source.bookId,
+		  	"verses":[{
+		  		"id": sourceFromverse.sourceId.split("-")[0],
+									"incipit": source.incipit,
+									"author": source.author,
+									"dedicatee": source.dedicatee,
+									"title": source.title,
+									"metreScheme": source.metreScheme,
+									"rhymeScheme": source.rhymeScheme,
+									"datePrecision": source.datePrecision,
+									"acrostic": source.acrostic,
+									"acrostiState": source.acrostiState,
+									"acrosticInfo": source.acrosticInfo,
+									"colophonInfo": source.colophonInfo,
+									"colophonState": source.colophonState,
+									"syllNum": source.syllNum,
+									"length": source.length,
+									"lengthUnit": source.lengthUnit,
+									"refrain": source.refrain,
+									"pageSubId": sourceFromverse.pageSubId,
+									"page": sourceFromverse.page,
+									"comments":source.comments,
+									"integrity": source.integrity,
+									"type": sourceFromverse.type,
+									"url": sourceFromverse.url,
+									"tradition": source.tradition,
+									"song": source.song,
+									"signature": source.signature,
+									"modernEd": source.modernEd,
+									"metreType": source.metreType,
+									"metreSchema": source.metreSchema,
+									"genre": source.genre,
+									"denomination": source.denomination,
+									"date": source.date,
+									"originalIncipit": source.originalIncipit,
+									"sourceRel": source.sourceRel,
+									"authorInfluence": source.authorInfluence,
+									"sharedMelodyBases": source.sharedMelodyBases,
+									"originalTitle": source.originalTitle,
+									"melodyEd": source.melodyEd,
+									"hymnId": source.hymnId,
+									"partialRel": source.partialRel,
+									"recordRel": source.recordRel,
+									"facsimileEd": source.facsimileEd,
+									"echo": source.echo,
+									"originalLanguage": source.originalLanguage,
+									"sharedMelodyTargets": source.sharedMelodyTargets
+		  	}]
+		  	})
+		  }
 		}
 	})
 })

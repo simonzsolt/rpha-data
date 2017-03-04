@@ -42,6 +42,28 @@ verses (ARRAY of variations in sources)
 	refrain
 	author
 
+	tradition
+	song
+	signature
+	modernEd
+	metreType
+	metreSchema
+	genre
+	denomination
+	date
+	originalIncipit
+	sourceRel
+	authorInfluence
+	sharedMelodyBases
+	originalTitle
+	melodyEd
+	hymnId
+	partialRel
+	recordRel
+	facsimileEd
+	echo
+	originalLanguage
+	sharedMelodyTargets
 
 *******************
 
@@ -122,3 +144,60 @@ v166
 	"type",
 	"sourceId"
 ]
+
+
+//--------------------------------------------//
+
+
+source
+v26
+v25
+
+title
+syllNum
+
+
+tradition
+song
+rhymeScheme
+recordType
+printedSources
+modernEd
+metreType
+metreSchema
+lengthUnit
+length
+integrity
+incipit
+id
+genre
+denomination
+datePrecision
+date
+colophonState
+author
+acrosticState
+_id
+originalIncipit
+sourceRel
+authorInfluence
+writtenSources
+sharedMelodyBases
+originalTitle
+melodyEd
+dedicatee
+comments
+colophonInfo
+acrosticInfo
+acrostic
+hymnId
+partialRel
+recordRel
+facsimileEd
+echo
+refrain
+originalLanguage
+sharedMelodyTargets
+v6
+v49
+v27
