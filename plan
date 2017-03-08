@@ -1,0 +1,18 @@
+- verses (mainVerse) have source fields
+	- page info comes from here
+- sources (mainSource) have document info
+- source ("recordType":"5") have verse info
+	- verse variation info comes from here
+
+1. Add mainSource docs to new collection
+2. Add list of verses contained in that doc
+	2.1 Get page info form verse source field if possible
+	2.2 Get verse variation info from "recordType":"5" source fields
+3.
+
+ADD sourcesFromVerses to NewSources collection
+ADD sources to NewSources
+
+ - 5 "recordType":"9" records are not included
+ - "id":"RMNY-1519" is a duplicate (needs to merged and
+    edited in newSources collection)

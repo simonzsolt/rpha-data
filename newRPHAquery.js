@@ -38,7 +38,7 @@ db.source.find({
 			}, {
 				$push: {
 					"verses": {
-					// source object
+						// source object
 					}
 				}
 			})
@@ -116,11 +116,17 @@ db.verse.find({
 
 db.newSources.find().forEach(function(newSource) {
 
-	db.source.find({ "recordType": "5" }).forEach(function(source) {
+	db.source.find({
+		"recordType": "5"
+	}).forEach(function(source) {
 
-		db.verse.find({ "source": { $exists: true } }).forEach(function(verse) {
+		db.verse.find({
+			"source": {
+				$exists: true
+			}
+		}).forEach(function(verse) {
 
-				for (i = verse.source.length - 1; i >= 0; i--) {
+			for (i = verse.source.length - 1; i >= 0; i--) {
 
 				if (source.source && source.source.bookId == verse.source[i].bookId) {
 					if (source.id.split("-")[2] == newSource.docBibNum &&
@@ -355,110 +361,213 @@ db.verse.find({
 //======================================================================================
 // create versesFromBoth collection
 // TODO: two source with type '5' and no 'source.source' field
-db.sourcesFromVerses.find().forEach(function(sourceFromverse){
-	db.source.find({"recordType":"5"}).forEach(function(source){
+db.sourcesFromVerses.find().forEach(function(sourceFromverse) {
+	db.source.find({
+		"recordType": "5"
+	}).forEach(function(source) {
 		if (source.source && sourceFromverse.bookId == source.source.bookId) {
-		  if( db.VersesfromBoth.findOne({"bookId":source.source.bookId}) !== null ){
-				db.VersesfromBoth.updateOne({"bookId":source.source.bookId},{$push:{"verses":{
-									"id": sourceFromverse.sourceId.split("-")[0],
-									"incipit": source.incipit,
-									"author": source.author,
-									"dedicatee": source.dedicatee,
-									"title": source.title,
-									"metreScheme": source.metreScheme,
-									"rhymeScheme": source.rhymeScheme,
-									"datePrecision": source.datePrecision,
-									"acrostic": source.acrostic,
-									"acrostiState": source.acrostiState,
-									"acrosticInfo": source.acrosticInfo,
-									"colophonInfo": source.colophonInfo,
-									"colophonState": source.colophonState,
-									"syllNum": source.syllNum,
-									"length": source.length,
-									"lengthUnit": source.lengthUnit,
-									"refrain": source.refrain,
-									"pageSubId": sourceFromverse.pageSubId,
-									"page": sourceFromverse.page,
-									"comments":source.comments,
-									"integrity": source.integrity,
-									"type": sourceFromverse.type,
-									"url": sourceFromverse.url,
-									"tradition": source.tradition,
-									"song": source.song,
-									"signature": source.signature,
-									"modernEd": source.modernEd,
-									"metreType": source.metreType,
-									"metreSchema": source.metreSchema,
-									"genre": source.genre,
-									"denomination": source.denomination,
-									"date": source.date,
-									"originalIncipit": source.originalIncipit,
-									"sourceRel": source.sourceRel,
-									"authorInfluence": source.authorInfluence,
-									"sharedMelodyBases": source.sharedMelodyBases,
-									"originalTitle": source.originalTitle,
-									"melodyEd": source.melodyEd,
-									"hymnId": source.hymnId,
-									"partialRel": source.partialRel,
-									"recordRel": source.recordRel,
-									"facsimileEd": source.facsimileEd,
-									"echo": source.echo,
-									"originalLanguage": source.originalLanguage,
-									"sharedMelodyTargets": source.sharedMelodyTargets
+			if (db.VersesfromBoth.findOne({
+					"bookId": source.source.bookId
+				}) !== null) {
+				db.VersesfromBoth.updateOne({
+					"bookId": source.source.bookId
+				}, {
+					$push: {
+						"verses": {
+							"id": sourceFromverse.sourceId.split("-")[0],
+							"incipit": source.incipit,
+							"author": source.author,
+							"dedicatee": source.dedicatee,
+							"title": source.title,
+							"metreScheme": source.metreScheme,
+							"rhymeScheme": source.rhymeScheme,
+							"datePrecision": source.datePrecision,
+							"acrostic": source.acrostic,
+							"acrostiState": source.acrostiState,
+							"acrosticInfo": source.acrosticInfo,
+							"colophonInfo": source.colophonInfo,
+							"colophonState": source.colophonState,
+							"syllNum": source.syllNum,
+							"length": source.length,
+							"lengthUnit": source.lengthUnit,
+							"refrain": source.refrain,
+							"pageSubId": sourceFromverse.pageSubId,
+							"page": sourceFromverse.page,
+							"comments": source.comments,
+							"integrity": source.integrity,
+							"type": sourceFromverse.type,
+							"url": sourceFromverse.url,
+							"tradition": source.tradition,
+							"song": source.song,
+							"signature": source.signature,
+							"modernEd": source.modernEd,
+							"metreType": source.metreType,
+							"metreSchema": source.metreSchema,
+							"genre": source.genre,
+							"denomination": source.denomination,
+							"date": source.date,
+							"originalIncipit": source.originalIncipit,
+							"sourceRel": source.sourceRel,
+							"authorInfluence": source.authorInfluence,
+							"sharedMelodyBases": source.sharedMelodyBases,
+							"originalTitle": source.originalTitle,
+							"melodyEd": source.melodyEd,
+							"hymnId": source.hymnId,
+							"partialRel": source.partialRel,
+							"recordRel": source.recordRel,
+							"facsimileEd": source.facsimileEd,
+							"echo": source.echo,
+							"originalLanguage": source.originalLanguage,
+							"sharedMelodyTargets": source.sharedMelodyTargets
 
-				}}})
-		  } else if( db.VersesfromBoth.findOne({"bookId":source.source.bookId}) == null ){
-		  	db.VersesfromBoth.insert({
-		  	"bookId": source.source.bookId,
-		  	"verses":[{
-		  		"id": sourceFromverse.sourceId.split("-")[0],
-									"incipit": source.incipit,
-									"author": source.author,
-									"dedicatee": source.dedicatee,
-									"title": source.title,
-									"metreScheme": source.metreScheme,
-									"rhymeScheme": source.rhymeScheme,
-									"datePrecision": source.datePrecision,
-									"acrostic": source.acrostic,
-									"acrostiState": source.acrostiState,
-									"acrosticInfo": source.acrosticInfo,
-									"colophonInfo": source.colophonInfo,
-									"colophonState": source.colophonState,
-									"syllNum": source.syllNum,
-									"length": source.length,
-									"lengthUnit": source.lengthUnit,
-									"refrain": source.refrain,
-									"pageSubId": sourceFromverse.pageSubId,
-									"page": sourceFromverse.page,
-									"comments":source.comments,
-									"integrity": source.integrity,
-									"type": sourceFromverse.type,
-									"url": sourceFromverse.url,
-									"tradition": source.tradition,
-									"song": source.song,
-									"signature": source.signature,
-									"modernEd": source.modernEd,
-									"metreType": source.metreType,
-									"metreSchema": source.metreSchema,
-									"genre": source.genre,
-									"denomination": source.denomination,
-									"date": source.date,
-									"originalIncipit": source.originalIncipit,
-									"sourceRel": source.sourceRel,
-									"authorInfluence": source.authorInfluence,
-									"sharedMelodyBases": source.sharedMelodyBases,
-									"originalTitle": source.originalTitle,
-									"melodyEd": source.melodyEd,
-									"hymnId": source.hymnId,
-									"partialRel": source.partialRel,
-									"recordRel": source.recordRel,
-									"facsimileEd": source.facsimileEd,
-									"echo": source.echo,
-									"originalLanguage": source.originalLanguage,
-									"sharedMelodyTargets": source.sharedMelodyTargets
-		  	}]
-		  	})
-		  }
+						}
+					}
+				})
+			} else if (db.VersesfromBoth.findOne({
+					"bookId": source.source.bookId
+				}) == null) {
+				db.VersesfromBoth.insert({
+					"bookId": source.source.bookId,
+					"verses": [{
+						"id": sourceFromverse.sourceId.split("-")[0],
+						"incipit": source.incipit,
+						"author": source.author,
+						"dedicatee": source.dedicatee,
+						"title": source.title,
+						"metreScheme": source.metreScheme,
+						"rhymeScheme": source.rhymeScheme,
+						"datePrecision": source.datePrecision,
+						"acrostic": source.acrostic,
+						"acrostiState": source.acrostiState,
+						"acrosticInfo": source.acrosticInfo,
+						"colophonInfo": source.colophonInfo,
+						"colophonState": source.colophonState,
+						"syllNum": source.syllNum,
+						"length": source.length,
+						"lengthUnit": source.lengthUnit,
+						"refrain": source.refrain,
+						"pageSubId": sourceFromverse.pageSubId,
+						"page": sourceFromverse.page,
+						"comments": source.comments,
+						"integrity": source.integrity,
+						"type": sourceFromverse.type,
+						"url": sourceFromverse.url,
+						"tradition": source.tradition,
+						"song": source.song,
+						"signature": source.signature,
+						"modernEd": source.modernEd,
+						"metreType": source.metreType,
+						"metreSchema": source.metreSchema,
+						"genre": source.genre,
+						"denomination": source.denomination,
+						"date": source.date,
+						"originalIncipit": source.originalIncipit,
+						"sourceRel": source.sourceRel,
+						"authorInfluence": source.authorInfluence,
+						"sharedMelodyBases": source.sharedMelodyBases,
+						"originalTitle": source.originalTitle,
+						"melodyEd": source.melodyEd,
+						"hymnId": source.hymnId,
+						"partialRel": source.partialRel,
+						"recordRel": source.recordRel,
+						"facsimileEd": source.facsimileEd,
+						"echo": source.echo,
+						"originalLanguage": source.originalLanguage,
+						"sharedMelodyTargets": source.sharedMelodyTargets
+					}]
+				})
+			}
+		}
+	})
+})
+
+//AGREGATION//
+
+db.source.aggregate([{
+		$match: {
+			$and: [{
+					"recordType": "5"
+				},
+				{
+					"source": {
+						$exists: true
+					}
+				}
+			]
+		}
+	},
+	{
+		$lookup: {
+			from: "sourcesFromVerses",
+			localField: "source.bookId",
+			foreignField: "bookId",
+			as: "versesFromBoth"
+		}
+	},
+	{
+		$match: {
+			"versesFromBoth.0": {
+				$exists: true
+			}
+		}
+	},
+	{
+		$project: {
+			"_id": 0,
+			"versesFromBoth": 1
+		}
+	}
+	//{$out: "VersesFromBoth2"}
+])
+
+// update to add sources to newSources
+db.source.find({
+	"recordType": "5"
+}).forEach(function(source) {
+	db.newSources.update({
+		"verses.sourceId": source.id
+	}, {
+		$set: {
+			"verses.$.incipit": source.incipit,
+			"verses.$.author": source.author,
+			"verses.$.dedicatee": source.dedicatee,
+			"verses.$.title": source.title,
+			"verses.$.metreScheme": source.metreScheme,
+			"verses.$.rhymeScheme": source.rhymeScheme,
+			"verses.$.datePrecision": source.datePrecision,
+			"verses.$.acrostic": source.acrostic,
+			"verses.$.acrostiState": source.acrostiState,
+			"verses.$.acrosticInfo": source.acrosticInfo,
+			"verses.$.colophonInfo": source.colophonInfo,
+			"verses.$.colophonState": source.colophonState,
+			"verses.$.syllNum": source.syllNum,
+			"verses.$.length": source.length,
+			"verses.$.lengthUnit": source.lengthUnit,
+			"verses.$.refrain": source.refrain,
+			"verses.$.comments": source.comments,
+			"verses.$.integrity": source.integrity,
+			"verses.$.tradition": source.tradition,
+			"verses.$.song": source.song,
+			"verses.$.signature": source.signature,
+			"verses.$.modernEd": source.modernEd,
+			"verses.$.metreType": source.metreType,
+			"verses.$.metreSchema": source.metreSchema,
+			"verses.$.genre": source.genre,
+			"verses.$.denomination": source.denomination,
+			"verses.$.date": source.date,
+			"verses.$.originalIncipit": source.originalIncipit,
+			"verses.$.sourceRel": source.sourceRel,
+			"verses.$.authorInfluence": source.authorInfluence,
+			"verses.$.sharedMelodyBases": source.sharedMelodyBases,
+			"verses.$.originalTitle": source.originalTitle,
+			"verses.$.melodyEd": source.melodyEd,
+			"verses.$.hymnId": source.hymnId,
+			"verses.$.partialRel": source.partialRel,
+			"verses.$.recordRel": source.recordRel,
+			"verses.$.facsimileEd": source.facsimileEd,
+			"verses.$.echo": source.echo,
+			"verses.$.originalLanguage": source.originalLanguage,
+			"verses.$.sharedMelodyTargets": source.sharedMelodyTargets
 		}
 	})
 })

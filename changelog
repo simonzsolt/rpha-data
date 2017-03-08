@@ -1071,10 +1071,23 @@ SOURCE
 	- isnert urls form 'MEK_URLs2.csv'
 	- saved as arango dump file in 'arangoExports' folder
 
-===========
-VERSION 3.0
-===========
+=======================
+VERSION 3.0 | newSources
+=======================
 
 - insert 716 'mainSource' records to 'newSources' collection
   	- schema: newSourcemodel
 	- script: newRPHAquery.js
+- add page nad type info from verse collection based on sourceId
+- add every possible variant info from source collection based on id
+
+- a
+	// - added "verseId" field (derived from sourceID of first verses document) //
+	- REMOVED: FAULTY
+	- subversion: c
+- b
+	- added "id" field ("docType" + "docBibNum")
+- c
+	- removed "verseId"
+- d
+	-- added "url" field from "sourcesFromVerses" collection

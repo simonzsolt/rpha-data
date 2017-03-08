@@ -1,6 +1,5 @@
 var propertiesTemp = []
 var propertiesTotal = []
-
 db.verse.find({
 	v48: {
 		$exists: true
@@ -18,7 +17,6 @@ db.verse.find({
 
 	}
 });
-
 printjson(propertiesTotal)
 
 
