@@ -1,0 +1,43 @@
+/*
+** Base IDs are collected in a separate list.
+** Verse is iterated twice. Variable names
+** have to be different in the loops.
+*/
+
+// For the bases
+LET list = (
+    FOR v IN verse
+        FILTER v.sharedMelodyBases != null
+            FOR mBase IN v.sharedMelodyBases
+                RETURN {
+                 "mBase": mBase,
+                 "_to": v._id
+                }
+)
+FOR l IN list
+    FOR vRec IN verse
+        FILTER l.mBase == vRec.id
+        INSERT  {
+            "_to": l._to,
+            "_from": vRec._id
+        } IN hasMelody
+
+// For the targets
+LET list = (
+    FOR v IN verse
+        FILTER v.sharedMelodyTargets != null
+            FOR target IN v.sharedMelodyTargets
+                RETURN {
+                 "target": target,
+                 "_from": v._id
+                }
+)
+FOR l IN list
+    FOR vRec IN verse
+        FILTER l.target == vRec.id
+        INSERT  {
+     // RETURN{
+            "_from": l._from,
+            "_to": vRec._id
+     // }
+        } IN hasMelody
